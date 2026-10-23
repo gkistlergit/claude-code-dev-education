@@ -5,7 +5,7 @@ area: app-development
 level: 3
 time: 10
 tags: [backend, serverless]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/best-practices

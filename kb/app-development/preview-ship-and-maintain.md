@@ -5,7 +5,7 @@ area: app-development
 level: 2
 time: 8
 tags: [preview, deploy]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/desktop#preview-your-app

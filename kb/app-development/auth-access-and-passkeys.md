@@ -5,7 +5,7 @@ area: app-development
 level: 3
 time: 9
 tags: [auth, passkeys]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/permissions
@@ -46,7 +46,7 @@ Cloudflare Access, the example here, is deny by default: a visitor must match an
 
 At registration, your server makes a random challenge. The browser passes it to `navigator.credentials.create()`, and the authenticator creates a key pair. The private key stays in the authenticator. The server checks the challenge and the origin, then stores the public key with the user. At sign-in, the server issues a new challenge, the browser calls `navigator.credentials.get()`, and the server verifies the signature against the stored public key.
 
-[MDN's Passkeys guide](https://developer.mozilla.org/en-US/docs/Web/Security/Authentication/Passkeys) adds three details that shape your design. The challenge comes from the server, and a server should discard it after about 10 minutes. A passkey is scoped to a domain, so by default only the same origin can use it. Decide your final address before you register real users, because a move to a new domain can leave existing passkeys unusable. MDN also encourages more than one passkey per account, such as one on a phone and one on a hardware key, because losing an authenticator loses its passkeys.
+[MDN's Passkeys guide](https://developer.mozilla.org/en-US/docs/Web/Security/Authentication/Passkeys) adds three details that shape your design. The challenge comes from the server, and a server should discard it after about 10 minutes. A passkey is scoped to a domain, so by default only the same origin can use it. Decide your final address before you register real users, because a move to a new domain can leave existing passkeys unusable. MDN also encourages more than one passkey per account, because losing an authenticator loses its passkeys. MDN's example pairs an everyday passkey with a backup on a roaming authenticator such as a hardware key. A hardware key costs money, so for this course use a passkey on a second device you already own.
 
 ### What Claude Drafts and What You Read
 

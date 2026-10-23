@@ -5,7 +5,7 @@ area: recipes
 level: 3
 time: 9
 tags: [recipe, migration]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/common-workflows
@@ -66,7 +66,7 @@ Use it when you upgrade a library, a runtime, or a standard-library API that you
 
 ## Worked Example
 
-The starter's `package.json` declares a minimum Node version in `engines`, and its README says the checks need Node 20 or later. You want your CI to run on a newer major version, written here as `<new major>`, and then raise the minimum. You already have the workflow from [CI That Gates the Deploy](../process/ci-that-gates-the-deploy.md).
+The starter's `package.json` declares a minimum Node version in `engines`, and its README says the checks need Node 22 or later. You want your CI to run on a newer major version, written here as `<new major>`, and then raise the minimum. You already have the workflow from [CI That Gates the Deploy](../process/ci-that-gates-the-deploy.md).
 
 1. Read the release notes for `<new major>` on the [Node.js releases page](https://nodejs.org/en/about/previous-releases), and the history entries in the [assert documentation](https://nodejs.org/api/assert.html), because the checks use `node:assert/strict`. One entry there says that from v25.0.0, promises are no longer considered equal unless they are the same instance. The Trail Notes checks compare lists of strings and numbers, so you expect no effect, and the CI run in step 5 confirms it.
 2. Pin: in the workflow, set `node-version` to `<new major>` instead of the moving `lts/*` alias. Leave `engines` alone until the checks pass. Record `node --version` from the version you are leaving.

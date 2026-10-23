@@ -5,7 +5,7 @@ area: process
 level: 3
 time: 8
 tags: [delegation, merge, deploy]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/permissions

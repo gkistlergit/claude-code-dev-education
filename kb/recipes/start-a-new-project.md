@@ -5,7 +5,7 @@ area: recipes
 level: 1
 time: 8
 tags: [recipe, new-project]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/desktop#start-a-session

@@ -5,7 +5,7 @@ area: process
 level: 2
 time: 7
 tags: [pull-requests]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/desktop#monitor-pull-request-status
@@ -35,7 +35,7 @@ Use this for every pull request, including ones you will merge yourself. The rev
     > git diff --stat main...HEAD
     > ```
 
-2. **Open** the diff by clicking **Changes** in the session's title bar, and read every file. Click a line to add a comment, then press **Cmd+Enter** to submit all your comments at once. Claude reads them and makes the changes, which appear as a new diff. See [Reading and Reviewing Diffs](../development/reading-and-reviewing-diffs.md).
+2. **Open** the diff by clicking **Changes** in the session's title bar, and read every file. Click a line, type your comment and press **Enter** to add it. After you have commented on several lines, press **Cmd+Enter** to submit them all at once. Claude reads them and makes the changes, which appear as a new diff. See [Reading and Reviewing Diffs](../development/reading-and-reviewing-diffs.md).
 3. **Run** `/code-review` in the prompt box. In a local session the findings arrive as a **Code review** card grouped by file. Click **Walk through in diff** to step through them, use **Fix this one** on a finding you agree with, or click **Apply fixes** to fix the open ones. The best-practices guide notes that a reviewer asked to find gaps will usually report some, so fix findings that affect correctness and leave style opinions alone.
 4. **Prompt** Claude to write the body from the [pull request template](../../templates/pr-body.md). Tell it to separate what it ran from what it did not.
 

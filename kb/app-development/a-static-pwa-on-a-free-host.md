@@ -5,7 +5,7 @@ area: app-development
 level: 2
 time: 10
 tags: [pwa, hosting]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/desktop#preview-your-app
@@ -39,8 +39,8 @@ Use it when the app works on your machine and you want a real address, an instal
 3. **Supply** two square PNG icons at those sizes. Any plain image works for a first deploy. Ask Claude to add them to the manifest, then **Review** the result in the **Changes** pane.
 4. **Preview** the app: ask Claude to open it in the Browser pane. A static folder needs a small static server, which [Preview, Ship and Maintain](preview-ship-and-maintain.md) sets up.
 5. **Check** that every path in the manifest and in `index.html` is relative, such as `./` and `./app.js`, with no leading slash. A project site on a shared host lives under a sub-path, and a leading slash points outside it.
-6. **Choose** a host and publish. For GitHub Pages, push the folder to a public repository ([git and gh Essentials](../terminal/git-and-gh-essentials.md) covers the push), open its **Settings**, choose **Pages**, and under "Build and deployment" set "Source" to **Deploy from a branch**. Pick the branch and the folder, then click **Save** ([GitHub's steps](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)). For Cloudflare, ask Claude to read the [static assets get-started page](https://developers.cloudflare.com/workers/static-assets/get-started/) and propose the smallest config for this folder, then run the deploy yourself.
-7. **Open** the https address the host gives you. In a Chromium-based browser, look for the install icon in the address bar, or open the developer tools, choose the **Application** panel and read the **Manifest** pane ([Chrome's guide](https://developer.chrome.com/docs/devtools/progressive-web-apps)). Safari on macOS Sonoma or later offers **File > Add to Dock** for any site.
+6. **Choose** a host and publish. For GitHub Pages, push the folder to a public repository ([git and gh Essentials](../terminal/git-and-gh-essentials.md) covers the push), open its **Settings**, choose **Pages**, and under "Build and deployment" set "Source" to **Deploy from a branch**. Pick the branch and the folder, then click **Save** ([GitHub's steps](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)). For Cloudflare, ask Claude to read the [static assets get-started page](https://developers.cloudflare.com/workers/static-assets/get-started/) and propose the smallest config for this folder, then run the deploy yourself. If any Cloudflare step asks for a payment method, stop and use GitHub Pages instead.
+7. **Open** the https address the host gives you. In a Chromium-based browser, look for the install icon in the address bar, or open the developer tools, choose the **Application** panel and read the **Manifest** tab ([Chrome's guide](https://developer.chrome.com/docs/devtools/progressive-web-apps)). Safari on macOS Sonoma or later offers **File > Add to Dock** for any site.
 
 > **Terminal tip**
 > Cloudflare's guide deploys with Wrangler, its command-line tool. `npx` runs a command-line tool from the npm registry, downloading it first if needed. `wrangler deploy` builds and uploads the assets folder named in your Wrangler config. Log in first with `npx wrangler login`. Read which folder the config names before you run the second command.

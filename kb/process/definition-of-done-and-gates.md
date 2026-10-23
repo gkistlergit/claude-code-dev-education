@@ -5,7 +5,7 @@ area: process
 level: 2
 time: 8
 tags: [gates, done]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/best-practices
@@ -78,7 +78,7 @@ Your Trail Notes `CLAUDE.md` gets this section:
 - If a check cannot run, say so. Do not report the task as done.
 ```
 
-The starter already has a gate at work. Two checks in `checks/search.check.mjs` fail until `searchNotes` matches title and body ignoring case, and the runner ends with `10 passed, 2 failed`. Install the pre-push hook after you fix that bug ([Fix a Bug from a Report](../recipes/fix-a-bug-from-a-report.md)). With the starter as shipped, the hook would refuse every push, and that refusal is the gate doing its job.
+The starter already has a gate at work. Two checks in `checks/search.check.mjs` fail until `searchNotes` matches title and body ignoring case, and the runner ends with `10 passed, 2 failed` (11 passed once you have saved `gates.check.mjs`). Install the pre-push hook after you fix that bug ([Fix a Bug from a Report](../recipes/fix-a-bug-from-a-report.md)). With the starter as shipped, the hook would refuse every push, and that refusal is the gate doing its job.
 
 ## Pitfalls
 

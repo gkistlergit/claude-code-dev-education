@@ -5,7 +5,7 @@ area: app-development
 level: 2
 time: 9
 tags: [testing, node]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/best-practices
@@ -14,6 +14,7 @@ sources:
   - https://git-scm.com/docs/githooks
   - https://git-scm.com/docs/git-push
   - https://docs.github.com/en/actions/tutorials/build-and-test-code/nodejs
+  - https://github.com/actions/checkout
   - https://github.com/actions/setup-node
 related: [D07, R04, P09]
 ---
@@ -29,7 +30,7 @@ Use it on day one of a project, before Claude changes anything. The best-practic
 1. **Open** the Terminal pane from the session's title bar (or press Ctrl+\`) in your Trail Notes copy, and **Run** the checks. The pane opens in the session's working directory.
 
    > **Terminal tip**
-   > `node checks/run.mjs` starts Node and runs the runner script, which loads each `*.check.mjs` file in `checks/` and prints one line per check. Lines starting `ok` passed and lines starting `FAIL` did not. It needs Node 20 or later and installs nothing.
+   > `node checks/run.mjs` starts Node and runs the runner script, which loads each `*.check.mjs` file in `checks/` and prints one line per check. Lines starting `ok` passed and lines starting `FAIL` did not. It needs Node 22 or later and installs nothing.
    >
    > ```terminal
    > node checks/run.mjs
@@ -53,7 +54,7 @@ Use it on day one of a project, before Claude changes anything. The best-practic
    > node checks/run.mjs; echo $?
    > ```
 
-5. **Prompt** Claude to create `githooks/pre-push` holding the two lines below, then **Run** the commands in the tip yourself.
+5. **Prompt** Claude to create `.githooks/pre-push` holding the two lines below, then **Run** the commands in the tip yourself.
 
    ```text
    #!/bin/sh
@@ -61,14 +62,14 @@ Use it on day one of a project, before Claude changes anything. The best-practic
    ```
 
    > **Terminal tip**
-   > `chmod +x` marks the file as executable, and the [Git docs](https://git-scm.com/docs/githooks) say hooks without the executable bit are ignored. `git config core.hooksPath githooks` tells Git to look for hooks in that folder, which the repository tracks, instead of in `.git/hooks`. A non-zero exit from a pre-push hook makes `git push` stop before anything is sent.
+   > `chmod +x` marks the file as executable, and the [Git docs](https://git-scm.com/docs/githooks) say hooks without the executable bit are ignored. `git config core.hooksPath .githooks` tells Git to look for hooks in that folder, which the repository tracks, instead of in `.git/hooks`. A non-zero exit from a pre-push hook makes `git push` stop before anything is sent.
    >
    > ```terminal
-   > chmod +x githooks/pre-push
-   > git config core.hooksPath githooks
+   > chmod +x .githooks/pre-push
+   > git config core.hooksPath .githooks
    > ```
 
-6. **Add** a CI workflow so a server runs the same command. Ask Claude to write `.github/workflows/checks.yml`, and copy the current version tags of the two actions from GitHub's [guide to building and testing Node.js](https://docs.github.com/en/actions/tutorials/build-and-test-code/nodejs), because they change.
+6. **Add** a CI workflow so a server runs the same command. Ask Claude to write `.github/workflows/checks.yml`, and check the current major version of each action on its releases page ([`actions/checkout`](https://github.com/actions/checkout), [`actions/setup-node`](https://github.com/actions/setup-node)), because they change. GitHub's [guide to building and testing Node.js](https://docs.github.com/en/actions/tutorials/build-and-test-code/nodejs) can lag behind. Standard runners are free in public repositories, and [CI That Gates the Deploy](../process/ci-that-gates-the-deploy.md) covers the limits for private ones.
 
    ```yaml
    name: checks
@@ -80,7 +81,7 @@ Use it on day one of a project, before Claude changes anything. The best-practic
      checks:
        runs-on: ubuntu-latest
        steps:
-         - uses: actions/checkout@v6
+         - uses: actions/checkout@v7
          - uses: actions/setup-node@v7
            with:
              node-version: lts/*

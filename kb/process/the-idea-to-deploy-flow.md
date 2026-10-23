@@ -5,7 +5,7 @@ area: process
 level: 1
 time: 7
 tags: [process, flow]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/best-practices
@@ -55,7 +55,7 @@ Steps 2 to 4 are covered in [Grill, Spec, Tickets](grill-spec-tickets.md), step 
 ### Where the steps happen in the app
 
 - Steps 2 to 4 happen in chat. [Plan Mode: Think Before You Edit](../development/plan-mode-think-before-you-edit.md) is another way to think before editing. In the author's setup, planning happens by grilling and writing a spec, and plan mode was never used.
-- For step 5, turn on **Worktree** in the row under the prompt box before you start the session.
+- For step 5, click the project folder control in the row under the prompt box and turn on **Worktree** before you start the session.
 - For step 6, run the checks in the **Terminal** pane or ask Claude to run them.
 - For step 7, the **Changes** pane shows the diff. After you open a pull request, the **Changes** card shows the status of its CI checks, and its **⋮** menu offers **Auto-fix** and **Merge when ready**.
 - Steps 8 to 10 happen on GitHub, with `gh`, and in your deploy workflow.

@@ -5,7 +5,7 @@ area: app-development
 level: 3
 time: 10
 tags: [offline, service-worker]
-verified: 2026-10-22
+verified: 2026-10-23
 status: partial
 sources:
   - https://code.claude.com/docs/en/best-practices
@@ -71,9 +71,9 @@ Use it when the app must open with no signal, such as Trail Notes on a trail. It
 6. **Test** offline. Load the app once while online so the worker installs, then reload so the page is controlled by it. MDN explains that a document starts with or without a worker and keeps that for its life. Now stop the server from the **Dev servers** menu in the Browser pane and reload. The shell should still appear.
 
    > **Warning**
-   > The Claude Code docs do not say whether the Browser pane registers service workers or has an offline switch. If the reload fails, check the console and try your regular browser before you decide the worker is broken. In Chrome, the developer tools **Application** panel ([guide](https://developer.chrome.com/docs/devtools/progressive-web-apps)) has a **Service Workers** pane with an **Offline** checkbox and a **Cache Storage** pane that lists what is cached.
+   > The Claude Code docs do not say whether the Browser pane registers service workers or has an offline switch. If the reload fails, check the console and try your regular browser before you decide the worker is broken. In Chrome, the developer tools **Application** panel ([guide](https://developer.chrome.com/docs/devtools/progressive-web-apps)) has a **Service Workers** tab with an **Offline** checkbox and a **Cache Storage** tab that lists what is cached.
 
-7. **Plan** for updates. MDN says a new worker installs in the background and activates once pages using the old one close. During development, the same Chrome pane has an **Update on reload** checkbox.
+7. **Plan** for updates. MDN says a new worker installs in the background and activates once pages using the old one close. During development, the same Chrome tab has an **Update on reload** checkbox.
 
 ## Worked Example
 

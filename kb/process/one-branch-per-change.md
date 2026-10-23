@@ -5,7 +5,7 @@ area: process
 level: 2
 time: 7
 tags: [branches, git]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/worktrees
@@ -26,7 +26,7 @@ Use this for every change that will become a pull request, and most of all when 
 ## Steps
 
 1. **Name** the change in one sentence, then derive a short branch name from it: lowercase words joined by hyphens, one topic, such as `tags-filter`. In the Code tab you can set a **Branch prefix** in **Settings > Claude Code**. Desktop prepends it to every worktree branch name, which keeps Claude-created branches together.
-2. **Turn on** **Worktree** before you start the session. Click the project folder control in the row under the prompt box and switch on **Worktree**. It is off by default, and the project has to be a Git repository. See [Worktrees and Branches in the App](../app/worktrees-and-branches-in-the-app.md).
+2. **Turn on** **Worktree** before you start the session. Click the project folder control in the row under the prompt box and switch on **Worktree**. It is off by default, and the project has to be a Git repository. The docs do not say how Desktop picks the name of the branch it creates, so read it from `git worktree list` (step 7) before you rely on a name. From the CLI, `claude --worktree tags-filter` creates `.claude/worktrees/tags-filter/` on a branch named `worktree-tags-filter`. See [Worktrees and Branches in the App](../app/worktrees-and-branches-in-the-app.md).
 3. **Ignore** the worktree folder. Worktrees live in `.claude/worktrees/` under your project by default, and the docs suggest adding that folder to `.gitignore` so its contents do not show up as untracked files.
 4. **Keep** the branch to one purpose. Check its size before you open the pull request, and split it if it carries two ideas.
 
@@ -71,7 +71,7 @@ git pull
 git worktree list
 ```
 
-`git pull` brings the merged work into your local main. The list shows the main checkout and the worktree for the finished branch:
+`git switch main` moves you to the main branch, and `git pull` brings the merged work into your local main. The list shows the main checkout and the worktree for the finished branch:
 
 ```text
 /path/to/trail-notes                        a1b2c3d [main]

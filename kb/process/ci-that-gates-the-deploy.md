@@ -5,7 +5,7 @@ area: process
 level: 3
 time: 9
 tags: [ci, deploy, github-actions]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/github-actions
@@ -13,6 +13,7 @@ sources:
   - https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax
   - https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches
   - https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions
+  - https://docs.github.com/en/billing/concepts/product-billing/github-actions
   - https://git-scm.com/docs/git-archive
   - https://cli.github.com/manual/gh_run_list
   - https://cli.github.com/manual/gh_run_view
@@ -24,6 +25,8 @@ CI runs your checks on every push and pull request, and a deploy job that depend
 ## When to Use It
 
 Use this once your project has a runner for its checks (see [Definition of Done and Gates](definition-of-done-and-gates.md)) and a place to deploy to. It is the step between a verified pull request and a change that users can see.
+
+This needs no payment method. GitHub's billing page says standard GitHub-hosted runners, such as `ubuntu-latest`, are free in public repositories, and that private repositories on GitHub Free get a monthly allowance of minutes. Without a payment method on file, usage stops when the allowance runs out. Larger runners are always charged, so do not pick them.
 
 ## Steps
 
@@ -84,14 +87,14 @@ Use this once your project has a runner for its checks (see [Definition of Done 
 6. **Check** that the commit in the "Package the exact commit" step matches the merge commit. If your app reports a version, print it in the same step so the log names both.
 
 > **Pro tip**
-> The docs describe `anthropics/claude-code-action@v1` as a GitHub Action that runs Claude Code inside a workflow, for example to review each pull request. It is optional and this course does not need it. It requires an authentication secret, and the docs say its runs use GitHub Actions minutes plus either API tokens or, if you authenticate with a subscription token, your subscription. Add it only if you have decided that is worth it, and keep your own checks as the gate. See [Claude Code GitHub Actions](https://code.claude.com/docs/en/github-actions).
+> The docs describe `anthropics/claude-code-action@v1` as a GitHub Action that runs Claude Code inside a workflow, for example to review each pull request. It is optional and this course does not need it. It requires an authentication secret, and the docs say its runs use GitHub Actions minutes plus either API tokens or, if you authenticate with a subscription token, your subscription. Paying per token with an API key is outside this course's free-only rule. Add it only if you have decided that is worth it, and keep your own checks as the gate. See [Claude Code GitHub Actions](https://code.claude.com/docs/en/github-actions).
 
 ## Worked Example
 
 You add the capstone 3a service worker to Trail Notes: `sw.js` holds a `CACHE_VERSION` and the list of cached files, and a check fails when that list changes without a version bump. You add a file to the list and forget to bump the version.
 
 1. You push the branch and open a pull request. The `checks` job runs `node checks/run.mjs`, the cache check fails, and the pull request shows a red check.
-2. You bump `CACHE_VERSION` and push again. The checks pass.
+2. You bump `CACHE_VERSION` and push. The check still fails, because the lock file does not match yet. You run `npm run cache:lock`, commit the lock file with `sw.js`, and push again. The checks pass.
 3. You merge. The push to `main` starts the workflow again, `checks` passes, and `deploy` runs.
 4. You read the deploy log. It prints `Deploying commit` followed by the merge commit, and you compare it with `gh pr view --json mergeCommit`.
 
