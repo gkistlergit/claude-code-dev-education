@@ -90,6 +90,12 @@ Blocked: this git command can destroy work. Ask the user to run it.
 2
 ```
 
+In a real session on CLI 2.1.309, asking Claude to run `git reset --hard HEAD~1` with this hook installed did not run the command. Claude's reply quoted a notice of this shape, and `git log --oneline` still listed both commits:
+
+```text
+PreToolUse:Bash hook error: [node ${CLAUDE_PROJECT_DIR}/.claude/hooks/block-destructive-git.mjs]: Blocked: this git command can destroy work. Ask the user to run it.
+```
+
 Repeat with `git status` in the command. It should print only `0`. In a session, type `/hooks` to open a read-only list of your configured hooks and see where each one is defined. The author's setup has a guard hook like this that blocks destructive git commands. Write the rule in words first and add a hook only when a rule alone has been broken.
 
 ## Common Mistakes

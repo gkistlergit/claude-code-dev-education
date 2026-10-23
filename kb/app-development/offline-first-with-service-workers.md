@@ -6,7 +6,7 @@ level: 3
 time: 10
 tags: [offline, service-worker]
 verified: 2026-10-23
-status: partial
+status: verified
 sources:
   - https://code.claude.com/docs/en/best-practices
   - https://code.claude.com/docs/en/desktop#preview-your-app
@@ -20,7 +20,7 @@ An offline-first app opens from a cache on the device and treats the network as 
 
 ## When to Use It
 
-Use it when the app must open with no signal, such as Trail Notes on a trail. It follows [A Static PWA on a Free Host](a-static-pwa-on-a-free-host.md), because a service worker needs https or `localhost`. The author's apps work this way (pattern 14): a service worker caches the app shell, and data lives in IndexedDB or a baked-in seed. The version gate is pattern 8, a gate that checks a gate. This page is marked partial because the Claude Code docs do not say how the Browser pane handles service workers.
+Use it when the app must open with no signal, such as Trail Notes on a trail. It follows [A Static PWA on a Free Host](a-static-pwa-on-a-free-host.md), because a service worker needs https or `localhost`. The author's apps work this way (pattern 14): a service worker caches the app shell, and data lives in IndexedDB or a baked-in seed. The version gate is pattern 8, a gate that checks a gate. The Browser pane does not register service workers (see the note in step 6), so test offline in a regular browser.
 
 ## Steps
 
@@ -68,10 +68,10 @@ Use it when the app must open with no signal, such as Trail Notes on a trail. It
    Add a check in checks/ that fails when the list of cached files in sw.js changes without a higher CACHE_VERSION. Record the last accepted version and a hash of the list somewhere the check can read. Add a second check that every local file index.html loads appears in the list. Show me both failing before you fix anything: change the list, run node checks/run.mjs, then undo the change.
    ```
 
-6. **Test** offline. Load the app once while online so the worker installs, then reload so the page is controlled by it. MDN explains that a document starts with or without a worker and keeps that for its life. Now stop the server from the **Dev servers** menu in the Browser pane and reload. The shell should still appear.
+6. **Test** offline in your regular browser. Serve the folder over localhost, open it in Chrome, and load the app once while online so the worker installs. Reload so the page is controlled by it. MDN explains that a document starts with or without a worker and keeps that for its life. Now stop the server (press Control+C in the terminal that runs it) and reload. The shell should still appear. In Chrome, the developer tools **Application** panel ([guide](https://developer.chrome.com/docs/devtools/progressive-web-apps)) has a **Service Workers** tab with an **Offline** checkbox and a **Cache Storage** tab that lists what is cached.
 
-   > **Warning**
-   > The Claude Code docs do not say whether the Browser pane registers service workers or has an offline switch. If the reload fails, check the console and try your regular browser before you decide the worker is broken. In Chrome, the developer tools **Application** panel ([guide](https://developer.chrome.com/docs/devtools/progressive-web-apps)) has a **Service Workers** tab with an **Offline** checkbox and a **Cache Storage** tab that lists what is cached.
+   > **Observed in the app**
+   > The Claude Code docs do not say whether the Browser pane supports service workers. On 2026-10-23 the pane (desktop app 3.6556.2, which reports Chrome 152) opened a Trail Notes server on localhost, and `navigator.serviceWorker.register('./sw.js')` failed with "An unknown error occurred when fetching the script". The same file fetched fine with status 200 as `text/javascript`, and the app logged "Offline support is off" and kept running online. Do not use the Browser pane to judge whether your worker works. This may change in later app versions.
 
 7. **Plan** for updates. MDN says a new worker installs in the background and activates once pages using the old one close. During development, the same Chrome tab has an **Update on reload** checkbox.
 
