@@ -21,7 +21,7 @@ Pages: [learn/level-0-orientation.md](../learn/level-0-orientation.md), [learn/l
 
 - [ ] The row under the prompt box holds an environment selector with a Local group, and a project folder control with **Open folder…**.
 - [x] The permission mode selector sits in that row (left end, button reads "Auto"). Its menu is titled Mode and lists Auto, Manual, Accept edits, Plan, Bypass permissions, matching the pages. Still open: does Cmd+Shift+M open it? (Seen 2026-10-23.)
-- [ ] The model picker is at the right end of that row and reads "Sonnet 5.5 Extra". Its menu lists Opus 5.5, Fable 5.1, Sonnet 5.5, Haiku 5.5, "Effort" (a submenu showing "Extra") and "More models". Still open: open the Effort submenu and list its entries, and say whether Cmd+Shift+E and Cmd+Shift+I open these menus. (Seen 2026-10-23.)
+- [ ] The model picker is at the right end of that row and reads "Sonnet 5.5 Extra". Its menu lists Opus 5.5, Fable 5.1, Sonnet 5.5, Haiku 5.5, "Effort" (a submenu showing "Extra") and "More models". The Effort submenu lists Low, Medium (Recommended), High, Extra (checked), Max and Ultracode. Still open: which keys opened the menus in your screenshots, and whether Extra is the docs' xhigh. (Seen 2026-10-23.)
 - [ ] Cmd+N starts a second session. Clicking its title in the title bar renames it. Esc stops a running reply.
 - [ ] Hovering a session in the sidebar shows a menu with **Archive**. A heading in the list has a "Group and sort" icon, then **View all**, then an **Archived** tab.
 - [ ] The Changes card shows line counts you can click. Cmd+Shift+D opens the Changes pane. Clicking a diff line opens a comment box, Enter adds the comment, Cmd+Enter submits the comments.
