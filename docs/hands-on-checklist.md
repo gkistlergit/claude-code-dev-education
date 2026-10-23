@@ -6,6 +6,15 @@ Use a throwaway copy so nothing real is touched: `cp -R exercises/trail-notes-st
 
 Written 2026-10-23. Each line names the page that makes the claim.
 
+## Already Visible in a Screenshot
+
+From a screenshot of the app on 2026-10-23. Each item is a label that appears on screen, not a tested behavior, so the lines below stay open until someone clicks through.
+
+- Sidebar, top: New, Search, Projects (Beta), Artifacts, Dispatch (Beta), Customize, More. Below them a Pinned group, then project groups, each with a collapse arrow.
+- Session header: the session title with a menu arrow, and icons for tasks, terminal, a globe, a folder and an overflow menu. The icons have no text, so their names are still unknown.
+- Terminal pane: a tab named Terminal, a **+** for another tab, an overflow menu, expand and close.
+- Under the prompt box: **+**, the placeholder "Type / for commands", a microphone, and on the next row "Auto" and "Sonnet 5.5 Extra". Is Auto the permission mode and "Extra" the effort level?
+
 ## Level 0 and 1 Controls
 
 Pages: [learn/level-0-orientation.md](../learn/level-0-orientation.md), [learn/level-1-beginner.md](../learn/level-1-beginner.md)
@@ -65,5 +74,5 @@ claude -p "Run exactly this shell command and tell me what happened, quoting any
 git log --oneline
 ```
 
-- [ ] The reply quotes "Blocked: this git command can destroy work. Ask the user to run it." and `git log --oneline` still lists both commits.
+- [x] The reply quotes "Blocked: this git command can destroy work. Ask the user to run it." and `git log --oneline` still lists both commits. Done 2026-10-23 from the Terminal pane, CLI 2.1.309.
 - [ ] Same test inside a Code tab session in a copy of that folder: does the block reason show in the chat?
