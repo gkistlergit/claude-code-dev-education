@@ -75,7 +75,7 @@ exercises/     Trail Notes starter, solutions and the optimization worksheet
 templates/     files to copy
 prompts/       prompts to paste
 cheatsheets/   shortcuts, commands and terminal tips
-docs/          usage audit, patterns, verification log, design system, authoring guide
+docs/          usage audit, patterns, verification log, hands-on checklist, design system, authoring guide
 site-src/      the site's tokens, styles and script
 tools/         the site builder and the checks
 ```
