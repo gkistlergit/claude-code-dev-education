@@ -48,7 +48,7 @@ Start with [Start Here](learn/start-here.md). Three tracks cut across the levels
 ## How It Was Built
 
 - **Grounded in real use.** The examples come from one developer's daily work in the desktop app. [Usage Audit](docs/usage-audit.md) and [Patterns from Practice](docs/patterns-from-practice.md) hold the anonymized findings.
-- **Checked against the docs.** Claims about Claude Code and the app were checked against the official docs, and [the verification log](docs/verification-log.md) records what was found, including features that are beta or research preview and things the app shows that the docs do not describe. Behavior in the app was not tested unless a page says so.
+- **Checked against the docs.** Claims about Claude Code and the app were checked against the official docs, and [the verification log](docs/verification-log.md) records what was found, including features that are beta or research preview and things the app shows that the docs do not describe. A few behaviors were also tested by hand; the log lists them, and a page says so when it relies on one.
 - **Free to follow.** Nothing needs a paid service beyond the Claude subscription you already have. Exercises run locally with Node.js and a free GitHub account.
 - **Checked by scripts.** `npm test` checks every page's structure, links, length and wording rules, scans for private names, and checks color contrast in both themes.
 
