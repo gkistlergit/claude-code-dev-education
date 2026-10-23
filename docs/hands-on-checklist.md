@@ -33,7 +33,7 @@ Pages: [learn/level-0-orientation.md](../learn/level-0-orientation.md), [learn/l
 Page: [kb/app/the-panes.md](../kb/app/the-panes.md) and the pages linked from it
 
 - [ ] Names and positions of the Changes, Files, Terminal, Browser and Plan panes.
-- [ ] Plan pane: with no plan it shows "No plan yet" and "Claude writes the plan here as it explores. Keep chatting." (Seen 2026-10-23.) Still open: in the CLI, plan mode wrote its plan to `~/.claude/plans/<name>.md`. Does the pane show that file once a plan exists?
+- [x] Plan pane: with no plan it shows "No plan yet" and "Claude writes the plan here as it explores. Keep chatting." With a plan it shows the plan file (written under `~/.claude/plans/`) as formatted text, a note about commenting on the plan, and copy buttons on code blocks. After the plan was approved the Mode selector read Auto. (Seen 2026-10-23.)
 - [ ] The **Worktree** toggle (project folder control), **Auto-fix**, **Merge when ready**, **Customize**, split view, side chat, **+ New**: where does each live and what is it called?
 
 ## Observed in the App Callouts

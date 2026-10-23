@@ -62,7 +62,7 @@ The iOS Simulator pane is in public beta, runs on macOS in local sessions only, 
 Computer use is a separate feature, labeled research preview. It lets Claude control apps on your screen, is off by default, needs a Pro or Max plan, and is enabled under Settings > This computer > System. The simulator pane does not need it. Claude tries more precise tools first: a connector, then Bash, then Claude in Chrome, and uses screen control last.
 
 > **Observed in the app**
-> The docs list a Plan pane and say it appears once the session has something to show. They do not describe it further. On 2026-10-23, in a session with no plan, the pane opened with the title Plan, the heading "No plan yet" and the line "Claude writes the plan here as it explores. Keep chatting." What it holds once a plan exists was not observed, and it may change between releases.
+> The docs list a Plan pane and say it appears once the session has something to show. They do not describe it further. On 2026-10-23 a session with no plan showed the title Plan, "No plan yet" and "Claude writes the plan here as it explores. Keep chatting." After a Plan-mode run wrote its plan, the pane showed that file as formatted text, with copy buttons on code blocks and a line at the top: "You can comment on the plan in plan mode, or when Claude asks you to approve it." This may change between releases.
 
 ## Worked Example
 
