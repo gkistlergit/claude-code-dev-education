@@ -2,7 +2,7 @@
 title: Pull Request Body Template
 kind: template
 order: 8
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/common-workflows
   - https://code.claude.com/docs/en/desktop

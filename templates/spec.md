@@ -2,7 +2,7 @@
 title: Spec Template
 kind: template
 order: 6
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/best-practices
 ---

@@ -5,7 +5,7 @@ area: workflow
 level: 2
 time: 9
 tags: [skills]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/skills
@@ -67,7 +67,7 @@ If every check passes, say so in one line.
 If a check fails, name the check file, quote the assertion message, read the function it covers in notes.js, and propose the smallest fix. Do not edit files until the user agrees.
 ```
 
-The `Bash(node checks/run.mjs)` entry follows the docs' pattern for pre-approving a command, such as `Bash(git status *)` in their commit skill. Run `/reload-skills`, then type `/check-notes`. You should see the search check fail and a proposed fix for `searchNotes`. Run `/skill-doctor` afterward and look for `check-notes` in the report.
+The `Bash(node checks/run.mjs)` entry follows the docs' pattern for pre-approving a command, such as `Bash(git status *)` in their commit skill. Run `/reload-skills`, then type `/check-notes`. You should see the two failing search checks and a proposed fix for `searchNotes`. Run `/skill-doctor` afterward and look for `check-notes` in the report.
 
 A starting file is in the [skill template](../../templates/skill.md).
 
@@ -86,7 +86,7 @@ The author has 24 user-level skills, 9 written by hand and 15 vendored, and each
 - Once invoked, the skill text stays in the conversation and is not re-read. Write guidance that applies to the whole task, for example "Run the tests after every edit".
 - After compaction, Claude Code keeps only the start of each invoked skill, so put the important lines first.
 - A rule that must hold every time belongs in a hook, not a skill (see [Hooks: Guardrails and Warnings](hooks-guardrails-and-warnings.md)).
-- The desktop docs say panel commands can behave differently in the Code tab. If `/skill-doctor` shows no report there, run it from the standalone CLI.
+- The desktop docs say commands that open an interactive panel in the terminal behave differently in the Code tab, and the skills docs say `/skill-doctor` opens its report in the `/plugin` manager. The docs do not name `/skill-doctor` for the Code tab and this was not tested. If it shows no report there, run it from the standalone CLI.
 
 ## Checkpoint
 

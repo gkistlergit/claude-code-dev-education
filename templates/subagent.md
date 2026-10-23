@@ -2,7 +2,7 @@
 title: Subagent Template
 kind: template
 order: 4
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/sub-agents
 ---

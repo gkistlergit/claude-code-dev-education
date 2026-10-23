@@ -2,7 +2,7 @@
 title: Retro Template
 kind: template
 order: 10
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/commands
 ---

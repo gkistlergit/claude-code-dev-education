@@ -5,7 +5,7 @@ area: workflow
 level: 3
 time: 8
 tags: [handoff, remote]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/remote-control

@@ -5,7 +5,7 @@ area: workflow
 level: 3
 time: 9
 tags: [scheduled-tasks, loop]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/desktop-scheduled-tasks
@@ -69,7 +69,7 @@ Run node checks/run.mjs in this folder. If every check passes, say so in one lin
 
 The prompt names a command and an outcome and forbids edits, so a late run does no harm. The author's rule is to schedule the chore and keep the thinking for yourself. Desktop tasks suit chores that tolerate a late run.
 
-For a cloud task, run `/schedule` and describe the chore, for example `/schedule daily PR review at 9am`. Claude asks follow-up questions and saves it to your account. `/schedule list`, `/schedule update` and `/schedule run` manage existing tasks. A cloud run starts a fresh cloud session. Skills that exist only in `~/.claude/skills/` on your machine are not found there, but Desktop tasks do load them.
+For a cloud task, run `/schedule` and describe the chore, for example `/schedule daily PR review at 9am`. Claude asks follow-up questions and saves it to your account. `/schedule list`, `/schedule update` and `/schedule run` manage existing tasks. A cloud run starts a fresh cloud session. Skills that exist only in `~/.claude/skills/` on your machine are not found there, because the skills docs say personal skills do not load in cloud sessions.
 
 ## Pitfalls
 

@@ -5,7 +5,7 @@ area: workflow
 level: 2
 time: 7
 tags: [memory]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/memory

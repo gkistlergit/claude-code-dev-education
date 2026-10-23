@@ -5,7 +5,7 @@ area: workflow
 level: 2
 time: 8
 tags: [permissions, allowlist]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/permissions
@@ -72,7 +72,7 @@ The author runs Auto mode (6,220 prompts, against 67 in Manual and 16 in Accept 
 
 - A Bash rule matches the command text Claude writes. The docs say `Bash(git push *)` stops `git push origin main` but not `git -C . push origin main`. Treat a deny rule as a guard for the usual form of a command. It is no security boundary. For hard limits, see sandboxing or a hook.
 - A rule with `*` before the subcommand, such as `Bash(git * main)`, matches far more than you meant. Claude Code warns about it at startup.
-- `permissions.defaultMode` values `auto` and `bypassPermissions` do not take effect from project settings files. Set them in your user settings.
+- `permissions.defaultMode` values `auto` and `bypassPermissions` do not take effect from project or local settings files. Set them in your user settings.
 - Adding a folder with `--add-dir` or `/add-dir` grants file access, not configuration. In the Code tab, click **+** next to the prompt box and choose **Add folder**.
 - In Auto mode, a boundary you state in chat ("don't push") is not stored as a rule and can be lost to compaction. Use a deny rule when you need a guarantee.
 

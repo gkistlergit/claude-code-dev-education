@@ -2,7 +2,7 @@
 title: Handoff Template
 kind: template
 order: 9
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/context-window
   - https://code.claude.com/docs/en/checkpointing

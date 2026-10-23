@@ -5,7 +5,7 @@ area: optimization
 level: 1
 time: 7
 tags: [context]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/context-window
@@ -83,7 +83,7 @@ Expect the first session's percentage to keep climbing, and the new session to s
 
 - Leaving a rule only in chat. After compaction, conversation-only instructions are summarized. Put anything that must persist in CLAUDE.md; [A CLAUDE.md That Earns Its Keep](../workflow/a-claude-md-that-earns-its-keep.md) covers what belongs there.
 - Pasting a whole log or file when a path or a line range would do. Whatever enters context rides along on every later request.
-- Expecting a nested CLAUDE.md or a path-scoped rule to survive compaction. The memory docs say to drop the `paths:` frontmatter or move the rule to the root CLAUDE.md if it must persist.
+- Expecting a nested CLAUDE.md or a path-scoped rule to survive compaction. The context-window page says to drop the `paths:` frontmatter or move the rule to the root CLAUDE.md if it must persist.
 - Waiting for automatic compaction to tidy up. It keeps what it judges important. [Clear, Compact and Hand Off](clear-compact-and-hand-off.md) shows how to choose for yourself.
 - Reading the docs' simulated token counts as your own.
 

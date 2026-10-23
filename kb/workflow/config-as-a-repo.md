@@ -5,7 +5,7 @@ area: workflow
 level: 3
 time: 9
 tags: [config, git]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/settings
@@ -115,7 +115,7 @@ Before every commit, read the staged diff for anything personal: account names, 
 - Do not put a file called `manifest.json` in `~/.claude/skills/`. The skills docs say that before v2.1.280 Claude Code moved the skill folders such a file listed into `~/.claude/skills/.trash/`. Keep the manifest at the repository root and give it another name.
 - In Cowork sessions on your desktop, the memory docs say Claude Code skips a `~/.claude/CLAUDE.md` that is itself a symlink. Check `/context` in the session type you use.
 - The memory docs say the Edit and Write tools refuse to write through a symlinked `CLAUDE.md` and direct Claude to edit the link's target instead. Expect the same care with other linked files.
-- If `~/.claude/settings.json` is a link to a read-only copy, a setting you change inside Claude Code applies to that session and is lost in the next. Keep the target writable.
+- Claude Code writes to `~/.claude/settings.json` the first time you change an option in the `/config` menu that it stores there. If that file is a link, keep its target writable. The docs do not say what happens when it is not, and this was not tested.
 - On Windows, `~/.claude` is `%USERPROFILE%\.claude`, and creating symlinks needs Administrator privileges or Developer Mode.
 - Cloud sessions do not read your `~/.claude`, so a skill or hook that lives only there is missing there.
 

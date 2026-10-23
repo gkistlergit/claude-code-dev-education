@@ -5,7 +5,7 @@ area: optimization
 level: 3
 time: 6
 tags: [fast-mode]
-verified: 2026-10-22
+verified: 2026-10-23
 status: partial
 sources:
   - https://code.claude.com/docs/en/fast-mode

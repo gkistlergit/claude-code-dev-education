@@ -5,7 +5,7 @@ area: workflow
 level: 3
 time: 10
 tags: [hooks]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/hooks
@@ -48,7 +48,7 @@ Hooks live in JSON settings files with three levels: an event, a matcher group t
 }
 ```
 
-Put it in `.claude/settings.json` to share it, or `.claude/settings.local.json` for you in one project. A hook in `~/.claude/settings.json` applies to all projects, so point its `command` at a script outside any one project. For tool events the matcher is the tool name. For `SessionStart` it is how the session began (`startup`, `resume`, `clear`, `compact`). For `PostCompact` it is `manual` or `auto`. The `if` field takes permission-rule syntax and works only on tool events. The docs call it best-effort.
+Put it in `.claude/settings.json` to share it, or `.claude/settings.local.json` for you in one project. A hook in `~/.claude/settings.json` applies to all projects, so point its `command` at a script outside any one project. For tool events the matcher is the tool name. For `SessionStart` it is how the session began (`startup`, `resume`, `clear`, `compact`, `fork`). For `PostCompact` it is `manual` or `auto`. The `if` field takes permission-rule syntax and works only on tool events. On any other event, a hook with `if` set never runs. The docs call the filter best-effort.
 
 A command hook gets the event as JSON on stdin, with fields such as `session_id`, `cwd`, `hook_event_name`, and for tool events `tool_name` and `tool_input`. It answers through its exit code:
 
@@ -66,14 +66,14 @@ The author runs four hooks. Each is a short script wired to one event.
 
 ### Block Destructive Git Commands
 
-The event is `PreToolUse` with matcher `Bash`, wired as in the settings example above. Save the script to `.claude/hooks/block-destructive-git.sh` and run `chmod +x` on it. It adapts the docs' `block-rm.sh` example:
+The event is `PreToolUse` with matcher `Bash`, wired as in the settings example above. Save the script to `.claude/hooks/block-destructive-git.sh` and run `chmod +x` on it. It adapts the docs' `block-rm.sh` example and needs `jq`, which the hooks guide says to install with `brew install jq` on macOS if you lack it. The [hook template](../../templates/hook.md) has a Node version that needs no `jq`:
 
 ```text
 #!/bin/bash
 # .claude/hooks/block-destructive-git.sh
 COMMAND=$(jq -r '.tool_input.command')
 
-if echo "$COMMAND" | grep -Eq 'git (push (--force|-f)|reset --hard|clean -[a-z]*f)'; then
+if echo "$COMMAND" | grep -Eq 'git (push( .*)? (--force|-f( |$))|reset --hard|clean -[a-z]*f)'; then
   echo "Blocked: destructive git command. Ask the user to run it." >&2
   exit 2
 fi

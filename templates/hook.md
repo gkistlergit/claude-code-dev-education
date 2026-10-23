@@ -2,7 +2,7 @@
 title: Hook Template
 kind: template
 order: 5
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/hooks
   - https://code.claude.com/docs/en/hooks-guide
@@ -48,6 +48,7 @@ const command = input.tool_input?.command ?? '';
 const blocked = [
   /git\s+reset\s+--hard/,
   /git\s+push\b.*--force/,
+  /git\s+push\b.*\s-f(\s|$)/,
   /git\s+clean\s+-\w*f/,
 ];
 
@@ -67,6 +68,7 @@ A hook has three levels. The event (`PreToolUse`) is the lifecycle point. The ma
 
 - `if` is optional and holds exactly one permission rule, such as `Bash(git *)`. It only saves starting the script for unrelated commands. The script still does the real check, and when Claude Code cannot tell which commands a Bash call runs, it runs the hook anyway.
 - `command` with `args` is the exec form: Claude Code starts `node` directly with the script path as one argument, with no shell and no quoting. `${CLAUDE_PROJECT_DIR}` is the project root, so the path works from any folder.
+- In `~/.claude/settings.json`, `${CLAUDE_PROJECT_DIR}` still points at whichever project the session started in. For a hook that applies to every project, give `args` the full path to a script kept outside any one project.
 - Claude Code passes the event as JSON on standard input. For a Bash call, `tool_input.command` is the command text.
 - Exit code 0 means success. With no output, there is no decision and the normal permission flow applies. Staying silent does not approve the call.
 - Exit code 2 is a blocking error. The tool call does not run and your standard error text goes to Claude as the reason.

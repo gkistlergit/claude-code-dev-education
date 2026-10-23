@@ -2,7 +2,7 @@
 title: Plan Template
 kind: template
 order: 7
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/permission-modes
   - https://code.claude.com/docs/en/best-practices
