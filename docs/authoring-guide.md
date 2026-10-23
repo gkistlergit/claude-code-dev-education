@@ -33,7 +33,7 @@ area: development
 level: 1
 time: 6
 tags: [plan-mode, permissions]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/permission-modes
@@ -97,7 +97,7 @@ Fence tags: `prompt`, `terminal`, `js`, `json`, `md`, `yaml`, `text`. No `$` pro
 ## Verification rules
 
 - Every claim about Claude Code, the desktop app or the CLI must trace to `docs/verification-log.md` or to a page you fetched from https://code.claude.com/docs/en/. Fetch with `curl -sL https://code.claude.com/docs/en/<page>.md`. If that fails, use WebFetch. List the pages you used in `sources`.
-- Set `verified: 2026-10-22` only for claims you checked against the docs. Nobody tested runtime behavior. Describe the interface by the names the docs use.
+- Set `verified` to the date you checked the claims against the docs, and only for claims you did check. Nobody tested runtime behavior. Describe the interface by the names the docs use.
 - Print labels exactly as the log lists them: research preview, public beta, beta, experimental, removed, deprecated.
 - Flags documented but absent from CLI 2.1.304 help are not taught as working. Do not teach `--max-turns`.
 - Never invent numbers: prices, limits, token counts, speeds or percentages. Use numbers only from the docs, from `docs/usage-audit.md`, or from your own arithmetic. If the docs give no limit, tell the reader where to look.
@@ -108,7 +108,7 @@ Fence tags: `prompt`, `terminal`, `js`, `json`, `md`, `yaml`, `text`. No `$` pro
 
 - Hands-on steps use the sample project Trail Notes: a small framework-free notes app. Its files are `index.html`, `style.css`, `app.js`, `notes.js`, `manifest.webmanifest` and later `sw.js`, with zero-dependency checks in `checks/`. Starters live in `exercises/trail-notes-starter/` and solutions in `exercises/trail-notes-solutions/`.
 - Real-workflow case studies come only from `docs/patterns-from-practice.md` and `docs/usage-audit.md`. Call them "the author's setup".
-- Never write a real company, customer or person name, an internal URL, an email address, a local path such as `/Users/...`, the name of any private project, or the name of any GitHub account. Use stand-ins such as "a schedule app" or "a search tool over a document corpus".
+- Never write a real company, customer or person name, an internal URL, an email address, a local path such as `/Users/...`, the name of any private project, or the name of any GitHub account. This repository's own URL in the README, the license and the site footer is the one exception. Use stand-ins such as "a schedule app" or "a search tool over a document corpus".
 
 ## Links
 

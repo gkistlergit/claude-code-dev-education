@@ -54,9 +54,9 @@ Start with [Start Here](learn/start-here.md). Three tracks cut across the levels
 
 ## Run It Locally
 
-You need Node.js 20 or later.
+You need Node.js 22 or later.
 
-```sh
+```terminal
 npm ci
 npm run build
 open site/index.html

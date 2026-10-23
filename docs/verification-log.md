@@ -2,6 +2,8 @@
 
 Checked on 2026-10-22 against the official docs at https://code.claude.com/docs/en (65 pages fetched as raw markdown) and the installed CLI, `claude --version` 2.1.304. The newest changelog entry at that time was 2.1.308, so the installed build was four patch releases behind the docs.
 
+Rechecked on 2026-10-23: the article authors and an independent review pass re-fetched the pages they cite. The installed CLI then reported 2.1.309. Every flag the Terminal pages teach is in its help, and the flags that were documented but absent in 2.1.304 are still absent. The sample git guard script and the Trail Notes checks were run, and the results match what the pages say. The tables below are from 2026-10-22.
+
 This log covers whether the docs describe a feature, what the docs call it, and any label printed on the page. It does not cover runtime behavior. Nobody opened the desktop app or ran a preview feature for the log itself. Articles describe behavior the way the docs do, and the build checked steps in the app where it could.
 
 Every link below is relative to https://code.claude.com/docs/en/. No page shows a last-updated date. The changelog and the weekly digest are the dated sources.
@@ -38,7 +40,7 @@ Verdicts: **Documented** means an official page describes it. **Partial** means 
 | Fast mode | `/fast` toggles a faster configuration for Claude Opus at higher per-token cost. The page covers the CLI and cloud sessions, not the Desktop page | research preview | **Partial** | `fast-mode` |
 | Panes | Chat, Changes (diff), Browser, Terminal, Files, Plan, Background tasks, Subagent. iOS Simulator on macOS. Drag to rearrange. Pop a pane out into its own window and dock it back | none | Documented | `desktop#arrange-your-workspace` |
 | Changes pane | Review changes file by file. Click a line to comment | none | Documented | `desktop#review-changes-with-diff-view` |
-| Files pane | Edit files in local sessions. View-only in cloud, SSH and WSL | none | Documented | `desktop#open-and-edit-files` |
+| File pane | Edit files in local sessions. View-only in cloud, SSH and WSL | none | Documented | `desktop#open-and-edit-files` |
 | Terminal pane | A shell in the session's working directory | none | Documented | `desktop#run-commands-in-the-terminal` |
 | Background tasks pane | Shows subagents, background shell commands and dynamic workflows | none | Documented | `desktop#watch-background-tasks` |
 | Plan pane | Listed once the session has something to show. The page does not describe its contents | none | Documented (thin) | `desktop#arrange-your-workspace` |

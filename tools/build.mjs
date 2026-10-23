@@ -40,15 +40,15 @@ const DIAGRAMS = {
   'idea-to-deploy': () => flowDiagram({
     id: 'd-flow', title: 'The idea-to-deploy flow', highlight: 6,
     steps: [
-      { t: 'Scope the idea', s: 'One job, small slice' }, { t: 'Grill', s: 'Make decisions explicit' }, { t: 'Spec', s: 'Write it down' },
-      { t: 'Tickets', s: 'Declare what blocks' }, { t: 'Branch', s: 'One change, one branch' }, { t: 'Build with checks', s: 'Fail loudly' },
-      { t: 'PR and CI', s: 'Review and gates' }, { t: 'Merge and deploy', s: 'The exact commit' }, { t: 'Record it', s: 'Verified and not' }
+      { t: 'Idea', s: 'One sentence, one reader' }, { t: 'Grill', s: 'Make decisions explicit' }, { t: 'Spec', s: 'Write it down' },
+      { t: 'Tickets', s: 'Declare what blocks' }, { t: 'Branch or worktree', s: 'One change, one branch' }, { t: 'Build with checks', s: 'Fail loudly' },
+      { t: 'PR and CI', s: 'Review and gates' }, { t: 'Merge', s: 'The commit you verified' }, { t: 'Deploy', s: 'That exact commit' }, { t: 'Record', s: 'Verified and not' }
     ]
   }),
   'session-lifecycle': () => flowDiagram({
     id: 'd-session', title: 'The life of a session', highlight: 2,
     steps: [
-      { t: 'Pick a folder', s: 'Local, cloud or SSH' }, { t: 'Send a prompt', s: 'Goal and constraints' }, { t: 'Approve or review', s: 'Permission mode decides' },
+      { t: 'Pick where to work', s: 'Folder or repository' }, { t: 'Send a prompt', s: 'Goal and constraints' }, { t: 'Approve or review', s: 'Permission mode decides' },
       { t: 'Review changes', s: 'Changes pane' }, { t: 'Open a PR', s: 'CI status in the app' }, { t: 'Archive or hand off', s: 'Clear or write a note' }
     ]
   }),
@@ -345,7 +345,7 @@ ${bodyHtml}
   ${tocHtml}
   <footer class="footer site-footer">
     <p>Independent and unofficial. Not affiliated with or endorsed by Anthropic.</p>
-    <p>Checked against the official docs on Oct 22, 2026. Behavior in the app was not tested unless a page says so. <a href="${R}docs/verification-log.html">See the verification log</a>.</p>
+    <p>Checked against the official docs on Oct 23, 2026. Behavior in the app was not tested unless a page says so. <a href="${R}docs/verification-log.html">See the verification log</a>.</p>
     <p>Code is MIT licensed and written content is CC BY 4.0. <a href="${REPO_URL}">Source on GitHub</a>.</p>
   </footer>
 </div>
@@ -466,7 +466,7 @@ const byKind = (k) => pages.filter((p) => p.kind === k).sort((a, b) => (a.data.o
   const levelCards = outline.levels.map((l) => {
     const p = pages.find((x) => x.out === ['learn/level-0-orientation.html', 'learn/level-1-beginner.html', 'learn/level-2-intermediate.html', 'learn/level-3-advanced.html'][l.level]);
     const n = articles.filter((a) => a.data.level === l.level).length;
-    return `<li><a class="card" href="${esc(relUrl(out, `learn/${['level-0-orientation', 'level-1-beginner', 'level-2-intermediate', 'level-3-advanced'][l.level]}.html`))}"><span class="chip">Level ${l.level}</span><b>${l.title}</b><span class="sum">${p ? esc(trunc(p.summary, 120)) : ''}${n ? ` ${n} articles.` : ''}</span></a></li>`;
+    return `<li><a class="card" href="${esc(relUrl(out, `learn/${['level-0-orientation', 'level-1-beginner', 'level-2-intermediate', 'level-3-advanced'][l.level]}.html`))}"><span class="chip">Level ${l.level} \u00b7 ${n} articles</span><b>${l.title}</b><span class="sum">${p ? esc(trunc(p.summary.split(/(?<=\.)\s/)[0], 140)) : ''}</span></a></li>`;
   }).join('');
   const areaCards = outline.areas.filter((a) => !['recipes', 'decision-guides', 'terminal', 'troubleshooting'].includes(a.slug)).map((a) => {
     const n = articles.filter((x) => x.area === a.slug).length;
@@ -491,7 +491,7 @@ const byKind = (k) => pages.filter((p) => p.kind === k).sort((a, b) => (a.data.o
 <h2 id="reference">Quick Reference</h2>
 <ul class="cards" role="list">${quick}</ul>
 <h2 id="verified">How It Is Checked</h2>
-<p>Claims about Claude Code and the desktop app were checked against the official docs on Oct 22, 2026, and the results are in the <a href="${esc(relUrl(out, 'docs/verification-log.html'))}">verification log</a>. Behavior in the app was not tested unless a page says so. Features that are in beta or research preview carry that label.</p>
+<p>Claims about Claude Code and the desktop app were checked against the official docs on Oct 22 and again on Oct 23, 2026, and the results are in the <a href="${esc(relUrl(out, 'docs/verification-log.html'))}">verification log</a>. Behavior in the app was not tested unless a page says so. Features that are in beta or research preview carry that label.</p>
 </article>`;
   addGenerated(out, SITE_TITLE, body, { summary: 'An unofficial, hands-on Claude Code knowledge base and course.', toc: [] });
 }
