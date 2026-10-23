@@ -1,0 +1,10 @@
+{
+  "name": "Trail Notes",
+  "short_name": "Trail Notes",
+  "description": "A small notes app that keeps everything in your browser.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f4ee",
+  "theme_color": "#1f6f5c"
+}

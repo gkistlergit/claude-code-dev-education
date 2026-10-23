@@ -1,0 +1,14 @@
+{
+  "name": "trail-notes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A small framework-free notes app used as the sample project in a Claude Code course.",
+  "scripts": {
+    "check": "node checks/run.mjs",
+    "cache:lock": "node checks/update-cache-lock.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

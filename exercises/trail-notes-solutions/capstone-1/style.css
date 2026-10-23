@@ -1,0 +1,102 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f6f4ee;
+  --surface: #ffffff;
+  --text: #1c2420;
+  --muted: #53605a;
+  --border: #c9d0c8;
+  --control-border: #77827b;
+  --accent: #1f6f5c;
+  --on-accent: #ffffff;
+  --danger: #9b2c2c;
+  --focus: #1a5fb4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141917;
+    --surface: #1d2420;
+    --text: #e8ede9;
+    --muted: #a7b3ad;
+    --border: #3a4741;
+    --control-border: #76837d;
+    --accent: #6fcfb3;
+    --on-accent: #0d1a15;
+    --danger: #f2a3a3;
+    --focus: #8ab8f5;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1rem/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.site-header, main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.site-header { padding-top: 1.5rem; }
+h1 { margin: 0; font-size: 1.75rem; }
+h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; }
+h3 { font-size: 1.05rem; margin: 0 0 0.25rem; }
+.site-header p { margin: 0.25rem 0 0; color: var(--muted); }
+
+.field { margin-bottom: 1rem; }
+label { display: block; margin-bottom: 0.25rem; font-weight: 600; }
+
+input, textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--control-border);
+  border-radius: 0.5rem;
+}
+
+textarea { resize: vertical; }
+
+button {
+  min-height: 2.75rem;
+  padding: 0.5rem 1.1rem;
+  font: inherit;
+  font-weight: 600;
+  color: var(--on-accent);
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+button.delete {
+  min-height: 2.75rem;
+  color: var(--danger);
+  background: transparent;
+  border-color: var(--danger);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+#status { margin: 0.5rem 0 1rem; color: var(--muted); }
+
+.notes { list-style: none; margin: 0; padding: 0 0 3rem; display: grid; gap: 0.75rem; }
+
+.note {
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+.note-body { margin: 0 0 0.75rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+.note time { display: block; margin-bottom: 0.75rem; font-size: 0.875rem; color: var(--muted); }

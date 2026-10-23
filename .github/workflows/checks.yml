@@ -1,0 +1,35 @@
+name: Checks
+
+on:
+  pull_request:
+  push:
+    branches-ignore: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Content and contrast checks
+        run: npm test
+      - name: Build the site
+        run: npm run build
+      - name: Check links and structure in the built site
+        run: npm run check:site
+      - name: Run the sample project's checks
+        run: |
+          set -e
+          for dir in exercises/trail-notes-solutions/*/; do
+            echo "== $dir"
+            (cd "$dir" && node checks/run.mjs)
+          done
+          echo "== starter (the search check is expected to fail)"
+          (cd exercises/trail-notes-starter && ! node checks/run.mjs)

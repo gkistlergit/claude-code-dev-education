@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trail Notes</title>
+  <meta name="description" content="A small notes app that keeps everything in your browser.">
+  <meta name="theme-color" content="#1f6f5c">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Trail Notes</h1>
+    <p>Your notes stay in this browser. Nothing is uploaded.</p>
+  </header>
+
+  <main>
+    <noscript><p>Trail Notes needs JavaScript to run.</p></noscript>
+
+    <section aria-labelledby="add-heading">
+      <h2 id="add-heading">Add a note</h2>
+      <form id="note-form">
+        <div class="field">
+          <label for="title">Title</label>
+          <input id="title" name="title" required autocomplete="off"
+                 pattern=".*\S.*" title="Enter a title with at least one character that is not a space.">
+        </div>
+        <div class="field">
+          <label for="body">Note</label>
+          <textarea id="body" name="body" rows="4"></textarea>
+        </div>
+        <button type="submit">Add note</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="notes-heading">
+      <h2 id="notes-heading" tabindex="-1">Your notes</h2>
+      <div class="field">
+        <label for="search">Search notes</label>
+        <input id="search" type="search" autocomplete="off">
+      </div>
+      <p id="status" role="status"></p>
+      <ul id="notes" class="notes"></ul>
+    </section>
+  </main>
+</body>
+</html>

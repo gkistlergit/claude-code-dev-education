@@ -1,0 +1,20 @@
+{
+  "name": "claude-code-dev-education",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Unofficial, hands-on Claude Code knowledge base and course, built around the Claude desktop app's Code tab.",
+  "scripts": {
+    "check": "node tools/check.mjs",
+    "build": "node tools/build.mjs",
+    "contrast": "node tools/contrast.mjs",
+    "check:site": "node tools/check-site.mjs",
+    "test": "node tools/check.mjs && node tools/contrast.mjs"
+  },
+  "dependencies": {
+    "markdown-it": "14.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
