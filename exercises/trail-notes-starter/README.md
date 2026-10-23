@@ -2,7 +2,7 @@
 title: Trail Notes Starter
 kind: exercise
 order: 1
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
 Trail Notes is a small notes app in plain HTML, CSS and JavaScript. It has no framework, no build step and nothing to install. The hands-on steps and capstones in this course use it. The starter has one bug on purpose: search only matches when the capitals match.
@@ -50,7 +50,7 @@ The Code tab can also show the running app in its Browser pane. [Preview, Ship a
 
 ## Run the Checks
 
-The checks need Node.js 20 or later. `node --version` prints yours; the installer is at [nodejs.org](https://nodejs.org).
+The checks need Node.js 22 or later. `node --version` prints yours; the installer is at [nodejs.org](https://nodejs.org).
 
 > **Terminal tip**
 > `node checks/run.mjs` runs the runner script with Node. `npm run check` does the same through the script in `package.json`. Neither downloads anything, because the project has no dependencies.

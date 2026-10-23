@@ -4,7 +4,7 @@ kind: capstone
 level: 3
 order: 4
 time: 120
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/best-practices
   - https://code.claude.com/docs/en/desktop
@@ -20,7 +20,7 @@ Add `sw.js` with a `CACHE_VERSION` that caches the app shell, register it from t
 ## Setup
 
 - Your `trail-notes` folder after Capstone 2, merged to the default branch of your free personal GitHub repository, with the CI workflow running the checks.
-- `OFFLINE.md` from Module M3.3. If you do not have it, write it first by following that module's step 4.
+- `OFFLINE.md` from Module M3.3, committed on your default branch so a worktree session can read it. If you do not have it, write it first by following that module's step 4.
 - If you skipped Capstone 2, copy `capstone-2/` from the [Trail Notes solutions](../exercises/trail-notes-solutions/README.md). The offline work does not depend on tags, so you may start from `capstone-1/` instead.
 - A way to preview over localhost. Browsers register service workers only on HTTPS pages and on localhost, so you will preview through a local server and not by opening the file directly. Check your browser's current documentation for the exact rule.
 

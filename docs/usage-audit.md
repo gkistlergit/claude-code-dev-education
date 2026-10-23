@@ -7,7 +7,7 @@ Period: late September to late October 2026, about four weeks. Counts come from 
 ## How the author uses Claude Code
 
 - **Interface.** Almost everything runs in the desktop app's Code tab. The terminal CLI accounts for 160 records out of thousands. This is why the course is app-first.
-- **Volume.** 498 top-level sessions across 179 project folders, about 31, 56, 46, 209 and 138 sessions started per week (the last week partial). The median session has 178 records. 94 sessions exceed 500 records and 21 exceed 1,000.
+- **Volume.** 498 top-level sessions across 179 project folders, about 31, 56, 46, 209 and 138 sessions started per week (the last week partial; the five weekly figures add to 480, not 498, so read them as approximate). The median session has 178 records. 94 sessions exceed 500 records and 21 exceed 1,000.
 - **Pull requests and worktrees.** Of 360 sessions with desktop metadata, 179 (50%) are bound to a pull request and 171 (48%) ran in a worktree. 97% are archived.
 - **Permission mode.** Auto mode on 6,220 prompts, Manual on 67, Accept edits on 16.
 - **Models and effort.** By turns: Opus about 155,000, Fable about 43,000, Sonnet about 28,000. Effort: xhigh about 120,000, high 65,000, max 26,000, medium 21,000. Fast mode was never used.
@@ -16,7 +16,7 @@ Period: late September to late October 2026, about four weeks. Counts come from 
 - **Subagents.** General-purpose 1,194 calls, a custom read-only scout agent 120, Explore 65.
 - **Browser and computer tools.** The built-in browser about 5,700 calls, computer use about 2,100, Claude in Chrome about 1,100.
 - **Session management.** 217 side sessions started from within sessions. 11 sessions came from Remote Control and 1 from the cloud. The desktop app's metadata lists 5 scheduled tasks. 9 sessions are starred.
-- **Slash commands and skills.** A handoff skill 86 times, a planning skill 32, a prompt-sharpening skill 27, `/clear` 24, `/model` 17, `/compact` once.
+- **Commands and skills.** A handoff skill 86 times, a planning skill 32, a prompt-sharpening skill 27, `/clear` 24, `/model` 17, `/compact` once.
 - **Context management.** Context is managed with handoffs and `/clear`. There were 7 compaction events in 5 sessions.
 - **Memory.** 269 memory files across 15 projects, mostly incident lessons, tooling traps, design notes and workflow preferences.
 

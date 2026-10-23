@@ -4,7 +4,7 @@ kind: capstone
 level: 1
 order: 2
 time: 60
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/desktop
   - https://code.claude.com/docs/en/permission-modes

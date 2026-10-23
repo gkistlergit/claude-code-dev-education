@@ -2,7 +2,7 @@
 title: Standard Tasks for the Messy Workflow Exercise
 kind: exercise
 order: 4
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
 These are the three tasks you run before and after each change in the [messy workflow worksheet](README.md). Paste each prompt exactly as written. If you reword a prompt between runs, you are measuring your wording and not your setup.
@@ -62,7 +62,7 @@ A run passes the quality gate only if all of these are true:
 
 1. You ran `node checks/run.mjs` yourself and the last line ends in `0 failed`.
 2. The check files that were in the base folder are unchanged.
-3. Only the expected files changed.
+3. Only the expected files changed. A `.claude/` folder does not count, because Claude Code saves permission rules there.
 4. `package.json` is unchanged, so no dependency was added.
 5. For task 3, the download worked in your browser.
 

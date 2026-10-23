@@ -2,7 +2,7 @@
 title: Glossary
 kind: glossary
 order: 1
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/glossary
   - https://code.claude.com/docs/en/desktop
@@ -26,7 +26,7 @@ Short definitions of the terms this knowledge base uses, in alphabetical order. 
 
 **Accept edits**: A permission mode (`acceptEdits`). Claude approves file edits and common filesystem commands such as `mkdir`, `touch` and `mv` on its own, and still asks before other terminal commands. Earlier versions of the Code tab called it Auto accept edits. See [Permission Modes Explained](app/permission-modes-explained.md).
 
-**Agent teams**: Several Claude Code sessions coordinated by a team lead, with a shared task list. Unlike subagents, each teammate has its own context window. Experimental and off by default. See [Subagents by Design](workflow/subagents-by-design.md).
+**Agent teams**: Several Claude Code sessions coordinated by a team lead, with a shared task list. Unlike subagents, which report only to the session that started them, teammates can message each other and you can talk to any of them directly. Experimental and off by default. See [Subagents by Design](workflow/subagents-by-design.md).
 
 **Auto-fix**: A control on a pull request in the Changes card. Claude fixes failing checks and, in local sessions, addresses new review comments from the repository owner, an organization member, a collaborator or a GitHub App. See [Pull Requests and Auto-fix](app/pull-requests-and-auto-fix.md).
 
@@ -40,7 +40,7 @@ Short definitions of the terms this knowledge base uses, in alphabetical order. 
 
 ## C
 
-**CACHE_VERSION**: A constant in the `sw.js` that the capstone 3a solution adds to Trail Notes. A check fails when the list of cached files changes without a new version. See [Offline-First with Service Workers](app-development/offline-first-with-service-workers.md).
+**CACHE_VERSION**: A constant in `sw.js`, the service worker file that the capstone 3a solution adds to Trail Notes. A check fails when the list of cached files changes without a new version. See [Offline-First with Service Workers](app-development/offline-first-with-service-workers.md).
 
 **Checkpoint**: A restore point Claude Code creates at each prompt that starts a turn. `/rewind` restores code, conversation or both. Checkpoints do not replace version control. See [Undo and Recover](development/undo-and-recover.md).
 
@@ -84,7 +84,7 @@ Short definitions of the terms this knowledge base uses, in alphabetical order. 
 
 **Handoff**: A note you write at the end of a long session so a fresh session can carry on. The author's setup uses handoffs far more than compaction, because a note you wrote is easier to trust than an automatic summary. See [Handoffs Between Sessions and Devices](workflow/handoffs-between-sessions-and-devices.md) and the [template](../templates/handoff.md).
 
-**Hook**: A handler that runs automatically at a fixed point in Claude Code's lifecycle, such as before a tool runs. A hook has an event, a matcher and a handler. Exit code 2 from a command hook blocks the action. See [Hooks: Guardrails and Warnings](workflow/hooks-guardrails-and-warnings.md) and the [template](../templates/hook.md).
+**Hook**: A handler that runs automatically at a fixed point in Claude Code's lifecycle, such as before a tool runs. A hook has an event, a matcher and a handler. Exit code 2 from a command hook blocks the action on events that can be blocked, `PreToolUse` among them. See [Hooks: Guardrails and Warnings](workflow/hooks-guardrails-and-warnings.md) and the [template](../templates/hook.md).
 
 ## L
 

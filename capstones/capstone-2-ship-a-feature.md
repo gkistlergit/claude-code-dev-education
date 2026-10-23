@@ -4,7 +4,7 @@ kind: capstone
 level: 2
 order: 3
 time: 150
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/desktop
   - https://code.claude.com/docs/en/worktrees
@@ -21,7 +21,7 @@ Ship a tags feature in which a note can carry tags and the list can be filtered 
 
 - Your `trail-notes` folder after Capstone 1, with the search fix committed and pushed to a free personal GitHub repository.
 - The `.github/workflows/checks.yml` workflow from Module M2.2 on the default branch. If you do not have it, finish that module first.
-- `SPEC.md`, `GLOSSARY.md` and `TICKETS.md` from Module M2.1. If you skipped it, do that module's exercise first.
+- `SPEC.md`, `GLOSSARY.md` and `TICKETS.md` from Module M2.1, committed on your default branch. A worktree session sees only committed files. If you skipped the module, do its exercise first.
 - If you skipped Capstone 1, copy `capstone-1/` from the [Trail Notes solutions](../exercises/trail-notes-solutions/README.md) into a new folder, run `git init`, make a first commit and publish it as Module M2.2 describes.
 - The GitHub CLI signed in to your personal account. `gh auth status` shows which account is active.
 

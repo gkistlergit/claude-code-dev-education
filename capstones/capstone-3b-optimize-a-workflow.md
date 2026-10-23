@@ -4,7 +4,7 @@ kind: capstone
 level: 3
 order: 5
 time: 180
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/commands
   - https://code.claude.com/docs/en/context-window
@@ -62,4 +62,4 @@ Show that one change to a workflow moved a reading by more than your own run-to-
 - Would you expect the result to hold for a different task or a different week? What would you measure to find out?
 - Which change on your list would you try next, and what number would make you keep it?
 
-Save as evidence: `CAPSTONE-3B.md`, the commits or saved copies for the change and any revert, and the raw numbers. They support Optimization level 3 and Workflow level 2 or 3 in the [rubric](../assessment/rubric.md). Score yourself with the rubric when you finish.
+Save as evidence: `CAPSTONE-3B.md`, the commits or saved copies for the change and any revert, and the raw numbers. They support Optimization level 3 in the [rubric](../assessment/rubric.md). If your change was an allow rule, its before and after counts also count toward the Workflow level 2 allow-rule item. Score yourself with the rubric when you finish.

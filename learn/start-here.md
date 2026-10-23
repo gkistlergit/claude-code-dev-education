@@ -4,7 +4,7 @@ kind: learn
 level: 0
 order: 0
 time: 15
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/desktop-quickstart
   - https://code.claude.com/docs/en/desktop
@@ -25,7 +25,7 @@ By the end you should be able to take a small app from an idea to a merged, chec
 - A Mac. The setup page lists macOS 13.0 or later as a system requirement for Claude Code, and the desktop app is a universal build for Intel and Apple Silicon.
 - A Claude plan that includes Claude Code. The desktop quick start lists Pro, Max, Team and Enterprise. Your sessions count against that plan, and `/usage` shows where you stand. The course asks you to buy nothing else.
 - The Claude desktop app. Install it from the link on the [desktop quick start](https://code.claude.com/docs/en/desktop-quickstart). The app includes Claude Code, so you do not need the command-line tool to use the Code tab.
-- Node.js. Claude Code does not need it. Trail Notes does: its checks run with `node checks/run.mjs`. This repository asks for version 20 or later. Download it from [nodejs.org](https://nodejs.org/en/download).
+- Node.js. Claude Code does not need it. Trail Notes does: its checks run with `node checks/run.mjs`. This repository asks for version 22 or later. Download it from [nodejs.org](https://nodejs.org/en/download).
 - git. Most Macs include it. Run `git --version` in Terminal to check.
 - A free GitHub account. You need it from Level 2, where you open pull requests and run continuous integration (CI). See GitHub's guide to [creating an account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github). The desktop app's pull request features also need the [GitHub CLI](https://cli.github.com/) (`gh`), and the app offers to help you install it the first time you create a pull request.
 - A terminal. The Terminal app that comes with macOS works. The Code tab also has its own Terminal pane. The [terminal guide](https://code.claude.com/docs/en/terminal-guide) in the Claude Code documentation shows how to open one.
@@ -88,7 +88,7 @@ The levels are the course. The knowledge base is the reference behind it, and yo
 
 - The areas are Desktop App, Development, App Development, Process, Optimization, Workflow, Recipes, Decision Guides, Troubleshooting and Terminal Tips.
 - Each article opens with a summary, then When to Use It, a main section (Steps, How It Works, a Decision Table, Symptoms and Fixes, or Measure It), a Worked Example, Pitfalls and a Checkpoint.
-- The [glossary](../kb/glossary.md) defines terms. The cheatsheets cover [desktop shortcuts](../cheatsheets/desktop-shortcuts.md), [slash commands](../cheatsheets/slash-commands.md) and [terminal tips](../cheatsheets/terminal-tips.md). The `templates/` folder holds starting files such as a [CLAUDE.md](../templates/claude-md.md) and a [PR body](../templates/pr-body.md), and the `prompts/` folder holds reusable prompts such as [Explore a Repo](../prompts/explore-a-repo.md).
+- The [glossary](../kb/glossary.md) defines terms. The cheatsheets cover [desktop shortcuts](../cheatsheets/desktop-shortcuts.md), [commands](../cheatsheets/slash-commands.md) and [terminal tips](../cheatsheets/terminal-tips.md). The `templates/` folder holds starting files such as a [CLAUDE.md](../templates/claude-md.md) and a [PR body](../templates/pr-body.md), and the `prompts/` folder holds reusable prompts such as [Explore a Repo](../prompts/explore-a-repo.md).
 - Troubleshooting articles are written as symptoms and fixes, and the decision guides give a table you can read in five minutes.
 
 Some articles describe "the author's setup." Those are anonymized patterns from one developer's daily use, collected in [Patterns from Practice](../docs/patterns-from-practice.md) and [Usage Audit](../docs/usage-audit.md). They are examples of one working setup, and yours can differ.

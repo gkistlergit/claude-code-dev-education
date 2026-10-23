@@ -3,7 +3,7 @@ title: Track: Process
 kind: track
 order: 2
 time: 88
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/best-practices
   - https://code.claude.com/docs/en/worktrees

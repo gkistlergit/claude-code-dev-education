@@ -2,7 +2,7 @@
 title: Trail Notes Solutions
 kind: exercise
 order: 2
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
 These folders hold worked solutions to the Trail Notes capstones. Each folder is a complete copy of the project with its own `checks/` folder. Try the capstone yourself first, then compare your result with the folder here.
@@ -51,7 +51,7 @@ The solution adds a second helper, `fold`, that trims and lowercases, and uses i
 
 `sw.js` caches the files named in `APP_SHELL` when it installs, serves them cache first, and deletes caches from earlier versions when it activates. `app.js` registers it. Service workers need `https` or `localhost`; MDN's guide to [using service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers) covers the lifecycle.
 
-Because the worker serves cached copies first, browsers keep showing the old files until a new `CACHE_VERSION` installs a new cache. Forgetting to bump it after a change to the file list leaves some visitors with a broken or stale app. The gate makes that mistake fail loudly.
+Because the worker serves cached copies first, browsers keep showing the old files until a new `CACHE_VERSION` installs a new cache. Forgetting to bump it after a change to the file list leaves some visitors with a broken or stale app. The gate makes that mistake fail loudly. A new worker also waits until every tab that uses the old one is closed, because `sw.js` does not call `skipWaiting()`, so a plain reload is not enough to pick up a new version.
 
 ### How the Gate Works
 

@@ -3,7 +3,7 @@ title: Track: App Development
 kind: track
 order: 1
 time: 117
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/best-practices
   - https://code.claude.com/docs/en/desktop

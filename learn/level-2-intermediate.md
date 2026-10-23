@@ -4,7 +4,7 @@ kind: learn
 level: 2
 order: 3
 time: 497
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/desktop
   - https://code.claude.com/docs/en/worktrees
@@ -138,7 +138,7 @@ Articles: 38 min. Exercise: 45 min. Total: 83 min. The exercise time is a planni
 
 ### Exercise
 
-You will publish Trail Notes to a free personal GitHub repository, then add a CI workflow through a pull request made from a worktree session. Check GitHub's documentation on [billing for GitHub Actions](https://docs.github.com/en/billing/managing-billing-for-your-products/about-billing-for-github-actions) to see what the free plan includes before you start.
+You will publish Trail Notes to a free personal GitHub repository, then add a CI workflow through a pull request made from a worktree session. Check GitHub's documentation on [billing for GitHub Actions](https://docs.github.com/en/billing/concepts/product-billing/github-actions) to see what the free plan includes before you start.
 
 > **Terminal tip**
 > `gh auth status` shows which GitHub account the GitHub CLI is signed in to. If you have more than one account, make sure the active one is your personal account before you go on. `gh repo create trail-notes` makes a new repository named trail-notes on that account. `--private` keeps it visible only to you (use `--public` if you prefer). `--source .` uses the current folder as the source, and `--push` uploads your commits. The [GitHub CLI manual](https://cli.github.com/manual/gh_repo_create) lists every option.
@@ -269,13 +269,13 @@ The articles use the seeded search bug as their example, and your `trail-notes` 
 3. **Prompt** Claude to fix it test-first:
 
    ```prompt
-   The existing search check already fails. Read it and tell me whether it covers titles, bodies or both. Then add one new check in checks/ for a case it does not cover yet, such as an all-capitals query like MAP. Run the checks and show me that the new check fails for the right reason. Then make the smallest change in notes.js that makes every check pass. Do not edit any existing check.
+   The existing search check already fails. Read it and tell me whether it covers titles, bodies or both. Then add one new check in a new file under checks/ for a case it does not cover yet, such as an all-capitals query like MAP. Run the checks and show me that the new check fails for the right reason. Then make the smallest change in notes.js that makes every check pass. Do not edit any existing check.
    ```
 
 4. **Prompt** for a second red-green cycle, this time on a new behavior and not a bug:
 
    ```prompt
-   I want one new behavior in searchNotes: a query of several words should match a note whose title and body together contain every word, in any order. Write one failing check for it, run it and show me that it fails for the right reason, then make the smallest change that passes, then run all checks. Do not edit any existing check.
+   I want one new behavior in searchNotes: a query of several words should match a note whose title and body together contain every word, in any order. Write one failing check for it in a new file under checks/, run it and show me that it fails for the right reason, then make the smallest change that passes, then run all checks. Do not edit any existing check.
    ```
 
 5. **Prompt** Claude to plan a refactor, and wait for its answer:
@@ -312,7 +312,7 @@ The articles use the seeded search bug as their example, and your `trail-notes` 
 ### Success Check
 
 - You saw `node checks/run.mjs` fail before the fix and pass after it.
-- `git status` lists `notes.js` as modified and the new check file under `checks/` as untracked, and no existing file under `checks/` is listed as modified.
+- `git status` lists `notes.js` as modified and the new check files under `checks/` as untracked, and no existing file under `checks/` is listed as modified.
 - `REFACTOR.md` was written before `storage.js` existed, and a note you add in the Browser pane survives a reload.
 - The review findings arrived in the conversation, and you wrote down for each one whether you fixed it or rejected it and why.
 - `PR_BODY.md` has an unverified section that is not empty.
@@ -395,7 +395,7 @@ You will configure your `trail-notes` project with a tighter CLAUDE.md, a rule, 
    Create .claude/rules/checks.md with two rules: run node checks/run.mjs after every change to a .js file and report the result, and never edit a file in checks/ to make a failing check pass.
    ```
 
-3. **Open** a new session on the folder and type `/context`. Look under Memory files for CLAUDE.md and the rules file. If one is missing from that list, Claude cannot see it.
+3. **Open** a new session on the folder and type `/context`. Look under Memory files for CLAUDE.md. If it is missing from that list, Claude cannot see it. The docs describe that list for CLAUDE.md files and do not say whether it also shows rules files, so note whether `checks.md` appears.
 4. **Teach** Claude a preference and find where it went:
 
    ```prompt
@@ -406,10 +406,10 @@ You will configure your `trail-notes` project with a tighter CLAUDE.md, a rule, 
 5. **Write** a skill. The [skill template](../templates/skill.md) shows the shape.
 
    ```prompt
-   Create a project skill at .claude/skills/add-check/SKILL.md. When I run /add-check followed by a function name, it adds a file checks/<name>.check.mjs with one failing assertion using node:assert, runs node checks/run.mjs, and reports which check fails. Write a description that says when to use it.
+   Create a project skill at .claude/skills/add-check/SKILL.md. When I run /add-check followed by a function name, it adds a file checks/<name>.check.mjs with one failing assertion using node:assert/strict like the other checks, runs node checks/run.mjs, and reports which check fails. Write a description that says when to use it.
    ```
 
-   Type `/` in the prompt box and look for `add-check`. Run `/add-check sortNotes` and confirm the runner reports a failure from the new file. Then clean up:
+   Type `/` in the prompt box and look for `add-check`. If it is missing, run `/reload-skills`, because Claude Code does not watch a skills folder that did not exist when the session started. Run `/add-check sortNotes` and confirm the runner reports a failure from the new file. Then clean up:
 
    ```prompt
    Delete the check file you just added to checks/ and run node checks/run.mjs to confirm everything passes again.
@@ -511,7 +511,7 @@ This module is a set of short drills. Deploying to a free host is optional here.
 2. **Tokenize** the styles and run a visual check:
 
    ```prompt
-   Move the colors, spacing and font sizes in style.css into CSS custom properties in a :root block at the top, and use them throughout. Do not change how the page looks. Then open the app in the Browser pane, take a screenshot, and check keyboard focus order and text contrast against WCAG AA. List problems; do not fix them yet.
+   style.css already keeps its colors in custom properties. Move the spacing and font sizes into custom properties in the same :root block, and use them throughout. Do not change how the page looks. Then open the app in the Browser pane, take a screenshot, and check keyboard focus order and text contrast against WCAG AA. Write the problems you find to A11Y.md; do not fix them yet.
    ```
 
 3. **Audit** a repository you did not write. Copy the capstone 3a solution to a new folder with the command below, open a session on that folder and note the percentage in the Context card first. `cp -R` copies a folder with everything inside it. Replace the first path with the location of the solution folder inside your copy of this repository. The second path is a new folder in your home folder.
@@ -531,7 +531,7 @@ This module is a set of short drills. Deploying to a free host is optional here.
    List the edge cases that searchNotes does not handle and rank them by how likely a user is to hit them.
    ```
 
-   Record both answers in `EFFORT.md` with the level, how deep each answer went and anything one found that the other missed. Then type `/usage` to see your plan usage.
+   Record both answers in `EFFORT.md` with the level, how deep each answer went and anything one found that the other missed. Then type `/usage` to see your plan usage, and add one line to `EFFORT.md` that names a change you would make because of it.
 5. **Diagnose** your install if you added the command-line tool. In Terminal, `claude doctor` runs read-only checks of the installation and prints what it finds.
 
    ```terminal
@@ -543,9 +543,9 @@ This module is a set of short drills. Deploying to a free host is optional here.
 ### Success Check
 
 - Claude's reply on the manifest lists its findings, or says it found none, and you saw the app in the Browser pane.
-- Running `grep -n ":root" style.css` in the folder prints a line near the top of the file, and the page still looks the same. `grep -n` prints each matching line with its line number.
+- The `:root` block at the top of `style.css` now holds spacing and font-size properties as well as colors, and the page still looks the same. `A11Y.md` names the checklist, WCAG AA, and lists what Claude found for focus order and contrast, or says it found nothing.
 - The audit summary came back from a subagent, and you recorded the Context card percentage before and after.
-- `EFFORT.md` has two entries, and `/usage` showed your plan usage.
+- `EFFORT.md` has two entries and a line naming one change you would make after reading `/usage`.
 - If you used the command line, `claude doctor` printed its findings.
 - You have a short list of differences between your tickets and the recipe.
 
@@ -577,7 +577,7 @@ This module is a set of short drills. Deploying to a free host is optional here.
 
 ### Go Further
 
-- Add a second `:root` block for dark mode and ask Claude to check contrast for both.
+- Read the dark-mode block that `style.css` already has inside a `prefers-color-scheme` media query, and ask Claude to check text contrast in both modes against WCAG AA.
 - Put the preview server settings in `.claude/launch.json` as the official [desktop documentation](https://code.claude.com/docs/en/desktop) describes, and read about the autoVerify setting.
 - Run `/skill-doctor` and `/context` together and note which one tells you what.
 - Read the [Update Docs](../prompts/update-docs.md) prompt and use it to refresh your CLAUDE.md after this module.

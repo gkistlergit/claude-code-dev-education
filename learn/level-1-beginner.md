@@ -4,7 +4,7 @@ kind: learn
 level: 1
 order: 2
 time: 223
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/desktop
   - https://code.claude.com/docs/en/permission-modes
@@ -48,7 +48,7 @@ You will give Claude the same kind of request under three modes and watch how it
 2. **Prompt** Claude with a request that states the goal, the constraint and the check:
 
    ```prompt
-   Add a one-line comment at the top of each file in checks/ that says what the file checks. Change nothing else. When you finish, run node checks/run.mjs and tell me whether the result is the same as before.
+   Add a one-line comment at the top of each file in checks/ that says what the file checks. Change nothing else. Run node checks/run.mjs before you start and again when you finish, and tell me whether the result is the same.
    ```
 
    In Manual mode Claude shows a diff and buttons to approve or decline each change. Approve them one at a time and read each diff before you do.
@@ -69,7 +69,7 @@ You will give Claude the same kind of request under three modes and watch how it
 
 ### Success Check
 
-- In Manual mode, every edit in step 2 appeared with approve and decline buttons before it was applied, and Claude reported whether the check result matched the earlier run (still one failing check).
+- In Manual mode, every edit in step 2 appeared with approve and decline buttons before it was applied, and Claude ran the checks before and after the edit and reported the same result both times (`2 failed`, both from the search check).
 - The Changes pane for step 2 shows only added comment lines in files under `checks/`.
 - After step 3, the Changes pane shows nothing new, so the plan edited no file.
 - After step 4, `OVERVIEW.md` exists and an indicator such as `+5` appears in the Changes card without an approval prompt.

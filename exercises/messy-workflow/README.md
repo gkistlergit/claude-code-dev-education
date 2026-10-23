@@ -2,7 +2,7 @@
 title: Optimize a Messy Workflow
 kind: exercise
 order: 3
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
 This worksheet turns "my setup feels slow" into a measured before and after. You run the same three tasks on Trail Notes with a deliberately bloated `CLAUDE.md`, record a few numbers you can collect by hand, change one thing, run again, and keep the change only if the numbers say it helped. You need a notepad and a stopwatch. No special tools are involved.
@@ -18,7 +18,7 @@ Take the same five readings after every run.
 | Approval prompts | Tally each time Claude stops and asks you to allow a command or an edit. If your permission mode never asks, the count is zero, so write the mode on the sheet. | Lower |
 | Corrections | Count the messages you send after the task prompt that fix or redirect Claude, such as "no, use the existing helper" or "do not touch that file". An answer to a question Claude asked is not a correction; note it under Notes. | Lower |
 | Context at the end | When the task is done, type `/context` and write down the usage figure it shows, exactly as printed. Use the same unit on every run. | Lower |
-| Time to green | Start a stopwatch when you send the task prompt. Stop it at the first run where the last line of `node checks/run.mjs` ends in `0 failed`. Then run the checks yourself to confirm. | Lower |
+| Time to green | Start a stopwatch when you send the task prompt. Stop it the first time the last line of the checks output ends in `0 failed`. Then run `node checks/run.mjs` yourself to confirm. | Lower |
 | Quality gate | Yes or no, using the list in `tasks.md`. A fast run that fails the gate does not count as an improvement. | Always yes |
 
 [How Context Works](../../kb/optimization/how-context-works.md) explains what `/context` is showing you.
@@ -52,11 +52,13 @@ Keep the runs outside the course repository. Claude Code loads a `CLAUDE.md` fro
 3. **Write down** the model, effort level and permission mode before you send anything. They stay the same for every run unless one of them is the thing you are testing.
 4. **Paste** the task prompt from `tasks.md` exactly, and start the stopwatch.
 5. **Tally** approval prompts and corrections as they happen. If you give an extra hint, count it as a correction.
-6. **Stop** the stopwatch at the first run whose last line ends in `0 failed`, then run `node checks/run.mjs` yourself to confirm.
+6. **Stop** the stopwatch the first time the checks output ends in `0 failed`, then run `node checks/run.mjs` yourself to confirm.
 7. **Type** `/context` and write down the figure.
 8. **Score** the quality gate and fill in one row of the results sheet.
 
 Do this for all three tasks, each in its own session and its own fresh copy. Then do the whole baseline a second time. Claude's work varies from run to run, so two identical setups rarely give identical numbers. The gap between your two baseline runs is your noise. A difference smaller than that gap tells you nothing.
+
+To get one number per reading, add the three tasks together for each round. For the context reading, add the three figures too, because you only compare rounds with each other. The difference between the two baseline totals is your noise gap. Compare a changed round's total with the average of the two baseline totals.
 
 ## Change One Thing
 
@@ -113,7 +115,7 @@ Readings:
 | Round 2 | | 2 | | | | | | |
 | Round 2 | | 3 | | | | | | |
 
-Noise gap for each reading (the difference between Baseline 1 and Baseline 2):
+Noise gap for each reading (the difference between the Baseline 1 total and the Baseline 2 total):
 
 | Approval prompts | Corrections | Context at the end | Time to green |
 |---|---|---|---|

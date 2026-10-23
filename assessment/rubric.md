@@ -2,7 +2,7 @@
 title: Rubric: What Advanced Means
 kind: rubric
 order: 1
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/best-practices
   - https://code.claude.com/docs/en/hooks-guide
@@ -92,7 +92,7 @@ Level 3 items:
 
 Level 1 items:
 
-- The history shows a commit made before a larger change, and its message says what and why.
+- The history shows a commit made before a larger change, such as the starter copy, and a later commit whose message says what and why.
 - You can list the steps of the idea-to-deploy flow in your own words and mark the ones you have done.
 
 Level 2 items:
@@ -172,10 +172,10 @@ Level 3 items:
 | Area | Level 1 evidence | Level 2 evidence | Level 3 evidence |
 |---|---|---|---|
 | Development | [Capstone 1](../capstones/capstone-1-fix-and-review.md), Level 1 modules | [Capstone 2](../capstones/capstone-2-ship-a-feature.md), Module M2.3 | Modules M3.1 and M3.3 |
-| App Development | Module M1.3 | Module M2.1, Capstone 2 | [Capstone 3a](../capstones/capstone-3a-offline-first-app.md), Module M3.3 |
-| Process | Capstone 1, Module M1.2 | Module M2.2, Capstone 2 | Modules M3.1 and M3.4, Capstone 3a |
+| App Development | Module M1.3 | Modules M2.1 and M2.5, Capstone 2 | [Capstone 3a](../capstones/capstone-3a-offline-first-app.md), Module M3.3 |
+| Process | Capstone 1, Modules M1.2 and M1.3 | Module M2.2, Capstone 2 | Modules M3.1 and M3.4, Capstone 3a |
 | Optimization | Module M1.3 | Module M2.5 | [Capstone 3b](../capstones/capstone-3b-optimize-a-workflow.md), Module M3.5 |
-| Workflow | Module M1.3 | Module M2.4 | Modules M3.1, M3.2 and M3.4, Capstone 3b |
+| Workflow | Module M1.3 | Module M2.4, Capstone 3b | Modules M3.1, M3.2 and M3.4 |
 
 You may use equivalent evidence from your own project when it meets the same item. A different small app counts if it shows the same thing: a check that failed first, a pull request with a body that states its limits, a measurement with raw numbers.
 

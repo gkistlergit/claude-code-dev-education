@@ -4,7 +4,7 @@ kind: learn
 level: 0
 order: 1
 time: 65
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/desktop-quickstart
   - https://code.claude.com/docs/en/desktop
@@ -113,7 +113,7 @@ You will run a first session on Trail Notes, ask Claude to explain it and run it
 
 ### Go Further
 
-- Type `@notes.js` in the prompt box to pull one file into the conversation, then ask a question about it. The desktop quick start describes @mentions.
+- Type `@notes.js` in the prompt box to pull one file into the conversation, then ask a question about it. The desktop reference describes @mentions under "Add files and context to prompts".
 - Skim the [desktop quick start](https://code.claude.com/docs/en/desktop-quickstart) and the [desktop reference](https://code.claude.com/docs/en/desktop) to see what the later levels cover.
 - Print the [desktop shortcuts cheatsheet](../cheatsheets/desktop-shortcuts.md) and keep it nearby.
 - Look up unfamiliar words in the [glossary](../kb/glossary.md).

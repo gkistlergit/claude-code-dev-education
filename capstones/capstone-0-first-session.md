@@ -4,7 +4,7 @@ kind: capstone
 level: 0
 order: 1
 time: 40
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/desktop-quickstart
   - https://code.claude.com/docs/en/desktop

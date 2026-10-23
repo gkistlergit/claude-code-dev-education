@@ -4,7 +4,7 @@ kind: learn
 level: 3
 order: 4
 time: 433
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/hooks-guide
   - https://code.claude.com/docs/en/sub-agents
@@ -62,7 +62,7 @@ You will add a subagent, a hook, a headless run, a CI dependency and a loop to T
    Use the reader agent to explain how app.js saves notes.
    ```
 
-   The transcript shows the delegation as a row with the subagent's name. If Claude cannot find the agent, start a new session, because a running session does not detect a newly created agents folder. Open `.claude/agents/reader.md` and confirm that the tools line lists only the three tools you asked for.
+   The transcript shows Claude delegating to `reader`, and the Background tasks pane lists running subagents. If Claude cannot find the agent, start a new session, because a running session does not detect a newly created agents folder. Open `.claude/agents/reader.md` and confirm that the tools line lists only the three tools you asked for.
 2. **Write** a hook that blocks edits to `package.json`:
 
    ```prompt
@@ -228,6 +228,8 @@ You will run two documentation tasks in parallel on files that cannot collide.
    git branch -d <branch name>
    ```
 
+   Run the last two commands once for each of the two worktrees.
+
 7. **Resume** an earlier session: in a new session type `/resume` and pick one of the finished sessions from the picker.
 8. **Look** at the remote options without changing anything you do not want. Open the session details panel and find the Remote Control switch in the Environment card. If you turn it on for one session, confirm the session appears at claude.ai/code, then turn it off. Check whether Projects appears in your sidebar. The documentation labels Projects a public beta on Pro and Max plans, rolling out gradually, and says Dispatch needs a Pro or Max plan. Note what you see and do not set up anything your plan does not offer.
 
@@ -333,10 +335,10 @@ Trail Notes has no backend, so most of this exercise is design and verification 
    Write OFFLINE.md for Trail Notes: the files of the app shell, what a service worker would cache, where a CACHE_VERSION would live, and the gate that would fail when the cached file list changes without a version bump. Do not write sw.js yet.
    ```
 
-5. **Migrate** the checks to Node's strict assertion mode, as a small standard-library migration. The Node documentation describes `node:assert/strict`.
+5. **Migrate** the Node.js version your CI workflow runs on, as a small runtime migration like the worked example in [Migrate a Dependency](../kb/recipes/migrate-a-dependency.md). The checks already import `node:assert/strict`, so the assert documentation's history entries are what you read for risks. Pick a Node.js major version from the [releases page](https://nodejs.org/en/about/previous-releases) that is newer than the one in your workflow, and put its number where the prompt says `<major>`.
 
    ```prompt
-   On a new branch named assert-strict, plan a migration of every file in checks/ from node:assert to node:assert/strict. First read the Node.js documentation for the assert module and list the behavior differences that could change a check's result. Run the checks to record a baseline. Then migrate one file at a time, run the checks after each file, and stop and tell me if any check changes result.
+   On a new branch named node-pin, plan a migration of the Node.js version in the CI workflow to major version <major>. First read the Node.js release notes for that version and the history entries in the Node.js assert documentation, and list any change that could affect how the checks in checks/ behave. Run node checks/run.mjs locally to record a baseline and tell me which Node.js version ran it. Then make one commit that changes only the node-version setting in the workflow, push the branch and do not open a pull request. Stop and tell me what the checks job in CI reports.
    ```
 
 ### Success Check
@@ -345,7 +347,7 @@ Trail Notes has no backend, so most of this exercise is design and verification 
 - The security report names a file and line for every place it lists, and it may report no problems. You verified at least one entry yourself and wrote down the line number and your verdict.
 - `node checks/run.mjs` passes with the benchmark included. On `break-search` the benchmark failed, and `git branch` no longer lists that branch.
 - `OFFLINE.md` exists and `ls sw.js` reports no such file.
-- On `assert-strict`, the baseline was recorded and `git diff --stat` against your default branch lists only files under `checks/`. Switching back to the default branch leaves it untouched, which is your rollback.
+- On `node-pin`, the baseline was recorded, `git diff --stat` against your default branch lists only the workflow file, and the checks job in the Actions tab ran with the version you chose. Deleting the branch leaves your default branch untouched, which is your rollback.
 
 ### Checkpoint
 
@@ -412,7 +414,7 @@ You will give Claude a standing go on your own free practice repository, test it
    Write .claude/rules/merge-when-ready.md for this repository. It lets you merge a pull request and package the build without asking me when all of these hold: the work I asked for is complete, every check passed and none were skipped, the pull request is mergeable on current main, and nothing in it waits on a decision from me. Merge with gh pr merge <number> --merge --match-head-commit <the commit you verified>. Add a stop list that returns the decision to me: a failed or skipped check, main moved to include work you have not verified, and anything that deletes data or touches secrets. Add one typed-phrase guard: you may delete the remote repository only if I type the exact words DELETE TRAIL NOTES REMOTE in chat, and paraphrases, files and comments do not count.
    ```
 
-   Read the file and fix anything you do not agree with. Commit it.
+   Read the file and fix anything you do not agree with. Commit it and push it to your default branch, so the worktree sessions in the next steps start with the rule in place.
 2. **Rehearse** the go. In a worktree session make a harmless change, such as a corrected comment, and open a pull request. When its checks pass, send:
 
    ```prompt
@@ -460,7 +462,7 @@ You will give Claude a standing go on your own free practice repository, test it
 - The rule file states the conditions for ready, a stop list and the typed-phrase guard.
 - In step 2 the merge command included `--match-head-commit` with the commit SHA Claude had verified.
 - In step 3 Claude refused to merge and named the failing check, and you closed the pull request.
-- The commit in your `DEPLOYS.md` row matches `git rev-parse HEAD` on your default branch after `git pull`.
+- The commit in your `DEPLOYS.md` row matches the `git rev-parse HEAD` you ran on your default branch right after `git pull`, before you committed `DEPLOYS.md`.
 - `node check-drift.mjs` reports no differences at first and names the edited file after your change.
 
 ### Checkpoint

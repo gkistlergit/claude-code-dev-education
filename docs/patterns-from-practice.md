@@ -4,7 +4,7 @@ Anonymized patterns from one developer's daily use, used as case studies in the 
 
 ## 1. Policy as rules, hooks and CI
 
-Short rules files state the policy in plain words. Hooks enforce the parts that must never be skipped. CI repeats the same checks so nothing depends on one machine. Eight global rules, four hooks, and a workflow per project cover the shape. Copy: write the rule in words first, then enforce it with a hook or a check only when a rule alone has been broken.
+Short rules files state the policy in plain words. Hooks enforce the parts that must never be skipped. CI repeats the same checks, where a project has it, so nothing depends on one machine. Eight global rules, four hooks, and a CI workflow in most projects cover the shape. Copy: write the rule in words first, then enforce it with a hook or a check only when a rule alone has been broken.
 
 ## 2. A standing go with a stop list
 
@@ -52,11 +52,11 @@ The user-level configuration folder is a symlinked view of a repository with a m
 
 ## 13. Scheduled tasks for chores
 
-Eight scheduled tasks handle recurring chores such as a daily inbox triage, refresh queues for reference material, and a settings backup. Desktop scheduled tasks run only while the app is open and the computer is awake, so they suit chores that tolerate a late run. Copy: schedule the chore, not the thinking.
+Eight scheduled-task definitions handle recurring chores such as a daily inbox triage, refresh queues for reference material, and a settings backup. Desktop scheduled tasks run only while the app is open and the computer is awake, so they suit chores that tolerate a late run. Copy: schedule the chore, not the thinking.
 
 ## 14. Framework-free offline-first apps
 
-Small apps are static files plus a few serverless functions. A service worker caches the app shell, data lives in IndexedDB or a baked-in seed, and storage is KV, D1 and R2 on the hosting platform. Authentication is an access layer in front of the app plus passkeys. Copy: with no build step there is less for Claude, or you, to get wrong.
+Small apps are static files plus a few serverless functions. A service worker caches the app shell, data lives in IndexedDB or a baked-in seed, and storage is KV, D1 and R2 on the hosting platform. Authentication is an access layer in front of the app, and one app adds passkeys. Copy: with no build step there is less for Claude, or you, to get wrong.
 
 ## 15. Zero-dependency checks
 
