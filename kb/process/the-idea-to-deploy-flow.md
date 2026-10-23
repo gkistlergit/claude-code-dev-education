@@ -24,6 +24,10 @@ Use the path as a map when you lose your place. Find the step you are on, then r
 
 ## How It Works
 
+The whole path is below. The outlined step is the gate: review and checks decide whether anything ships.
+
+{{diagram:idea-to-deploy}}
+
 The flow puts a person at the start, where you decide what to build, and a person at the end, where you decide what ships. Claude does much of the work in between, and the checks keep that work honest.
 
 ```text

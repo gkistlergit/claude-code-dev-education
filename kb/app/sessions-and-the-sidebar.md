@@ -25,6 +25,10 @@ Use this page when you run more than one piece of work at a time, or when the se
 
 ## How It Works
 
+A session moves through the stages below. At the outlined stage, the permission mode decides how often Claude stops to ask you.
+
+{{diagram:session-lifecycle}}
+
 Every session tracks its own context and changes independently. That is what makes parallel work possible, and it is also why a long-lived session can drift from what you now want. Two sessions that work in the same folder still edit the same files on disk, which is the problem worktrees solve.
 
 | Task | How |

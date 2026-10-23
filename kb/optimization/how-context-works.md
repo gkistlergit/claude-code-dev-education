@@ -25,6 +25,10 @@ Read this page before your first long session, and again when a session starts f
 
 ## How It Works
 
+Everything Claude can see at once shares one window. The picture is illustrative, and its sizes are not measured.
+
+{{diagram:context-window}}
+
 ### What Fills the Window
 
 The context-window page in the official docs walks through a session and shows what enters context at each point.
