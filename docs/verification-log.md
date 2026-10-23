@@ -115,9 +115,11 @@ These are flagged "Observed in the app" wherever an article mentions them.
 - Scratch or temporary workspaces on the desktop.
 - Pinning and searching sessions in the desktop sidebar.
 - Fast mode on the Desktop Code tab.
-- The contents of the Plan pane.
+- The contents of the Plan pane. Its empty state was seen on 2026-10-23: the title Plan, "No plan yet", and "Claude writes the plan here as it explores. Keep chatting." A pane holding a plan has not been seen.
 
 ## Tested by hand
+
+- 2026-10-23, desktop app screenshots sent by the owner, Code tab: the permission mode menu (titled Mode, five entries in the order Auto, Manual, Accept edits, Plan, Bypass permissions, each with a number and a description), the model picker menu (Opus 5.5, Fable 5.1, Sonnet 5.5, Haiku 5.5, an Effort submenu, More models) and the Plan pane's empty state. The three Observed callouts on Permission Modes Explained, Which Model and Effort, and The Panes say what was seen. The Effort submenu and the keyboard shortcuts were not tried.
 
 - 2026-10-23, Browser pane (desktop app 3.6556.2, reports Chrome 152): `navigator.serviceWorker.register('./sw.js')` for a page on `http://localhost:8765/` fails with "An unknown error occurred when fetching the script", while a plain `fetch('./sw.js')` returns 200 as `text/javascript`. `isSecureContext` is true and the Cache API exists. Offline reload therefore cannot be tested in the pane.
 - 2026-10-23, Google Chrome 156 (headless, throwaway profile, driven over the debugging port), `exercises/trail-notes-solutions/capstone-3a`: the worker installed and cached the six shell files in `trail-notes-v1`. The first load was not controlled (`navigator.serviceWorker.controller` was null) and the reload was. With the server stopped, a reload still showed Trail Notes and ran `app.js`, and a file outside the cache failed with a network error. The Application panel's Offline checkbox and Update on reload were not used.

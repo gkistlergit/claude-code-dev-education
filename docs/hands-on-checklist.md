@@ -20,8 +20,8 @@ From a screenshot of the app on 2026-10-23. Each item is a label that appears on
 Pages: [learn/level-0-orientation.md](../learn/level-0-orientation.md), [learn/level-1-beginner.md](../learn/level-1-beginner.md)
 
 - [ ] The row under the prompt box holds an environment selector with a Local group, and a project folder control with **Open folder…**.
-- [ ] The permission mode selector sits in that row. List the names it shows (pages say Manual, Accept edits, Plan, Auto, Bypass permissions). Does Cmd+Shift+M open it?
-- [ ] The model menu and the effort menu: where are they, and what are the entries called?
+- [x] The permission mode selector sits in that row (left end, button reads "Auto"). Its menu is titled Mode and lists Auto, Manual, Accept edits, Plan, Bypass permissions, matching the pages. Still open: does Cmd+Shift+M open it? (Seen 2026-10-23.)
+- [ ] The model picker is at the right end of that row and reads "Sonnet 5.5 Extra". Its menu lists Opus 5.5, Fable 5.1, Sonnet 5.5, Haiku 5.5, "Effort" (a submenu showing "Extra") and "More models". Still open: open the Effort submenu and list its entries, and say whether Cmd+Shift+E and Cmd+Shift+I open these menus. (Seen 2026-10-23.)
 - [ ] Cmd+N starts a second session. Clicking its title in the title bar renames it. Esc stops a running reply.
 - [ ] Hovering a session in the sidebar shows a menu with **Archive**. A heading in the list has a "Group and sort" icon, then **View all**, then an **Archived** tab.
 - [ ] The Changes card shows line counts you can click. Cmd+Shift+D opens the Changes pane. Clicking a diff line opens a comment box, Enter adds the comment, Cmd+Enter submits the comments.
@@ -33,7 +33,7 @@ Pages: [learn/level-0-orientation.md](../learn/level-0-orientation.md), [learn/l
 Page: [kb/app/the-panes.md](../kb/app/the-panes.md) and the pages linked from it
 
 - [ ] Names and positions of the Changes, Files, Terminal, Browser and Plan panes.
-- [ ] Plan pane: in the CLI, plan mode wrote its plan to `~/.claude/plans/<name>.md`. Does the Plan pane show that file, and when does it appear?
+- [ ] Plan pane: with no plan it shows "No plan yet" and "Claude writes the plan here as it explores. Keep chatting." (Seen 2026-10-23.) Still open: in the CLI, plan mode wrote its plan to `~/.claude/plans/<name>.md`. Does the pane show that file once a plan exists?
 - [ ] The **Worktree** toggle (project folder control), **Auto-fix**, **Merge when ready**, **Customize**, split view, side chat, **+ New**: where does each live and what is it called?
 
 ## Observed in the App Callouts

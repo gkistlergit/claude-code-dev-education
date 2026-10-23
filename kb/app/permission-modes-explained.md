@@ -31,6 +31,9 @@ The mode selector sits in the row under the prompt box, in the same row as the m
 | Auto | `auto` | Everything, with a background classifier checking actions such as shell commands and network requests | Long tasks, fewer interruptions |
 | Bypass permissions | `bypassPermissions` | Everything except the actions no mode auto-approves | Sandboxed containers or VMs only |
 
+> **Observed in the app**
+> On 2026-10-23 the mode menu was titled Mode and listed Auto, Manual, Accept edits, Plan and Bypass permissions in that order, with a number from 1 to 5 beside each and a one-line description. Auto read "Claude handles permission decisions" and Manual read "Always ask before making changes". The docs do not give this wording, and it may change.
+
 Earlier versions of the Code tab labeled the first three Ask permissions, Auto accept edits and Plan mode. A sixth mode, `dontAsk`, exists only in the CLI.
 
 ### Auto Mode

@@ -36,6 +36,9 @@ Use this when a result misses edge cases, skips verification, or took more think
 
 In the Code tab, the model picker sits in the row under the prompt box. Press **Cmd+Shift+I** for the model menu and **Cmd+Shift+E** for the effort menu. Default levels differ by model, and an unsupported level falls back to the highest supported one at or below it. The model configuration page lists the defaults.
 
+> **Observed in the app**
+> On 2026-10-23 the picker button read "Sonnet 5.5 Extra", the model name followed by the current effort. Its menu listed Opus 5.5, Fable 5.1, Sonnet 5.5 and Haiku 5.5 with a number from 1 to 4 beside each, then "Effort", which showed the current level and opens a submenu, and "More models". The effort submenu was not opened, so how its labels map to low, medium, high, xhigh and max is not confirmed. The docs describe the picker more briefly, and the wording may change.
+
 Depending on your plan, Fable usage can bill to usage credits instead of your plan's included limits. The `/model` picker shows "Requires usage credits" on that row, so read it before you choose.
 
 Fast mode is a research preview and a separate question. It runs Claude Opus in a configuration tuned for response speed, at a higher cost per token. On subscription plans the docs say it is available through usage credits only, outside your plan's included limits, so this course does not recommend it. [Fast Mode: When It Pays](../optimization/fast-mode-when-it-pays.md) explains how to decide.
