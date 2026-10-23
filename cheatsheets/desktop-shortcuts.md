@@ -2,7 +2,7 @@
 title: Desktop Shortcuts
 kind: cheatsheet
 order: 1
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/desktop
 ---

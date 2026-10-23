@@ -5,7 +5,7 @@ area: terminal
 level: 3
 time: 9
 tags: [terminal, headless, automation]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/headless

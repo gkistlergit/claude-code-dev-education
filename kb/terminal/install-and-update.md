@@ -5,7 +5,7 @@ area: terminal
 level: 0
 time: 8
 tags: [terminal, install]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/setup
@@ -81,7 +81,7 @@ You need macOS 13.0 or later, an internet connection, and a Pro, Max, Team, Ente
    claude --version
    ```
 
-   A working install prints a version number such as `2.1.211 (Claude Code)`. If Terminal says `command not found: claude`, the folder holding `claude` is not on your PATH, the list of folders the shell searches. The installer prints the fix under `Setup notes`. For the default macOS shell, zsh, the docs give these two commands:
+   A working install prints a version number, for example `2.1.309 (Claude Code)`. If Terminal says `command not found: claude`, the folder holding `claude` is not on your PATH, the list of folders the shell searches. The installer prints the fix under `Setup notes`. For the default macOS shell, zsh, the docs give these two commands:
 
    ```terminal
    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc

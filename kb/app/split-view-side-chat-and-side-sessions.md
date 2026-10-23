@@ -5,7 +5,7 @@ area: app
 level: 3
 time: 8
 tags: [split-view, side-chat, parallel]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/desktop#work-in-parallel-with-sessions

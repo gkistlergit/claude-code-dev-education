@@ -5,7 +5,7 @@ area: app
 level: 0
 time: 7
 tags: [sessions, sidebar]
-verified: 2026-10-22
+verified: 2026-10-23
 status: partial
 sources:
   - https://code.claude.com/docs/en/desktop#manage-sessions

@@ -5,7 +5,7 @@ area: app
 level: 1
 time: 8
 tags: [permissions, auto-mode]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/desktop#choose-a-permission-mode
@@ -37,7 +37,7 @@ Earlier versions of the Code tab labeled the first three Ask permissions, Auto a
 
 In Auto, a separate classifier model reviews actions before they run. It blocks anything that goes beyond your request, targets infrastructure it does not recognize, or looks driven by hostile content Claude read. Examples blocked by default include downloading and running code with `curl | bash`, force pushes, production deploys and migrations, and `git reset --hard`. If the classifier blocks an action 3 times in a row or 20 times in total, Auto pauses and prompts you again.
 
-Auto appears in the selector only when it is available. It needs Opus 4.6 or later, Sonnet 4.6 or later, Haiku 5.5, or a Fable model. An organization administrator can turn it off with the `disableAutoMode` key in managed settings. The Settings screen has no separate toggle for it.
+Auto appears in the selector only when it is available. On the Anthropic API it needs Opus 4.6 or later, Sonnet 4.6 or later, Haiku 5.5, or a Fable model. The permission-modes page lists a different set of models for Amazon Bedrock, Google Cloud's Agent Platform and Microsoft Foundry. An organization administrator can turn it off with the `disableAutoMode` key in managed settings. The Settings screen has no separate toggle for it.
 
 If you tell Claude in the conversation "don't push" or "wait until I review", the classifier treats that as a block signal. The classifier re-reads the transcript each time, so compaction can remove the message. For a hard guarantee, add a deny rule instead.
 

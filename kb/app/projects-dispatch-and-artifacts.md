@@ -5,7 +5,7 @@ area: app
 level: 3
 time: 8
 tags: [projects, dispatch, artifacts, beta]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/claude-projects
@@ -49,7 +49,7 @@ The session appears in the Code tab's sidebar with your others. With default gro
 
 An artifact is a live page that Claude publishes from your session to a private URL on claude.ai. It stays private to you until you share it from the Share control in the page header. Ask in plain language, for example "Make an artifact that walks through this PR with the diff annotated inline", then ask for changes and Claude republishes to the same URL.
 
-A page is one self-contained file with no backend, so it cannot serve several routes. It needs a session signed in with `/login`, the Anthropic API as the model provider, and a desktop app version 1.13576.0 or later. `/artifacts` lists the artifacts you own. For a deck or a design, `/slides` and `/design` start the beta templates. Both need Claude Code v2.1.265 or later. Claude Docs reaches Claude Code as a connector and is also beta.
+A page is one self-contained file with no backend, so it cannot serve several routes. It needs a session signed in with `/login`, the Anthropic API as the model provider, and, if you use the desktop app, version 1.13576.0 or later. `/artifacts` lists the artifacts you own. For a deck or a design, `/slides` and `/design` start the beta templates. Both need Claude Code v2.1.265 or later. Claude Docs reaches Claude Code as a connector and is also beta.
 
 > **Pro tip**
 > Publishing sends the page to claude.ai. If you only need a page on your own computer, ask Claude for a local HTML file and tell it not to publish.

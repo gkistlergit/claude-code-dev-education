@@ -5,7 +5,7 @@ area: app
 level: 0
 time: 6
 tags: [project-folder, environment]
-verified: 2026-10-22
+verified: 2026-10-23
 status: partial
 sources:
   - https://code.claude.com/docs/en/desktop#start-a-session
@@ -74,7 +74,7 @@ Use your copy of Trail Notes.
 - If Claude cannot find `node`, `npm` or another tool you use, check that it runs in your regular Terminal and that your shell profile sets `PATH`. Then restart the app.
 - On macOS, an app launched from the Dock or Finder reads your shell profile for `PATH` and a fixed set of Claude Code variables, but not every variable you export there. To give local sessions a variable, add it to a saved local environment and start your sessions from it.
 - A session started from a saved environment shows no project folder control. If the folder is wrong, edit the environment.
-- Cloud sessions work from repositories on GitHub, so a folder that exists only on your computer is not available to one. See [Remote Control and Cloud Sessions](remote-control-and-cloud-sessions.md) for what fits where.
+- A cloud session in the app picks repositories instead of a folder, and the docs describe cloud sessions as cloning code from GitHub. A folder that exists only on your computer is not something you can pick there. See [Remote Control and Cloud Sessions](remote-control-and-cloud-sessions.md) for what fits where.
 - Do not rely on a scratch workspace for work you want to keep.
 
 ## Checkpoint

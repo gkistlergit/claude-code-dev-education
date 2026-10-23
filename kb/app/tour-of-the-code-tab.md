@@ -5,7 +5,7 @@ area: app
 level: 0
 time: 6
 tags: [desktop, orientation]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/desktop#start-a-session
@@ -40,7 +40,7 @@ This row holds the controls you set before and during a session, from left to ri
 - The environment selector is the first control. It picks where Claude runs.
 - The project folder control sits next to it and picks the folder Claude works in.
 - The permission mode selector sets how much Claude can do without asking.
-- The model picker sits toward the right end. Effort levels are listed in the model picker, and `Cmd+Shift+E` opens the effort menu. The usage ring beside the picker shows your plan usage.
+- The model picker sits toward the right end. `Cmd+Shift+E` opens the effort menu. The usage ring beside the picker shows your plan usage.
 
 ### The Title Bar
 

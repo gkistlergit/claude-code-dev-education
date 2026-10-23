@@ -5,7 +5,7 @@ area: app
 level: 3
 time: 8
 tags: [remote-control, cloud]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/remote-control
@@ -13,6 +13,7 @@ sources:
   - https://code.claude.com/docs/en/desktop#continue-in-another-surface
   - https://code.claude.com/docs/en/desktop#control-which-sessions-appear-on-your-other-devices
   - https://code.claude.com/docs/en/claude-code-on-the-web
+  - https://code.claude.com/docs/en/permission-modes
 related: [W09, W11, A04]
 ---
 
@@ -68,7 +69,7 @@ Two situations with Trail Notes.
 
 You start a session that fixes `searchNotes`, then need to leave. Type `/remote-control` before you go, and open claude.ai/code on your phone. You can read progress and reply. Your computer must stay on and the app must keep running. If you quit the app or stop the process, the session goes offline until you bring it back.
 
-Later, you want Claude to add tags while your laptop is shut for the night. Your copy of Trail Notes exists only as a folder on your laptop, so a cloud session has nothing to clone. Push the project to a GitHub repository first. Then start a cloud session with that repository selected, send the task, and check in the morning. Claude works in the cloud environment, and your laptop can stay closed.
+Later, you want Claude to add tags while your laptop is shut for the night. Your copy of Trail Notes exists only as a folder on your laptop, so a cloud session started from the app has nothing to clone. Push the project to a GitHub repository first. Then start a cloud session with that repository selected, send the task, and check in the morning. Claude works in the cloud environment, and your laptop can stay closed.
 
 The author rarely used either feature. Over about four weeks, 11 sessions came from Remote Control and 1 from the cloud, out of 498 top-level sessions. The course covers both because they fill a gap in that setup. See [Handoffs Between Sessions and Devices](../workflow/handoffs-between-sessions-and-devices.md) and [Scheduled Tasks and Loops](../workflow/scheduled-tasks-and-loops.md) for recurring or unattended work.
 

@@ -5,7 +5,7 @@ area: terminal
 level: 1
 time: 7
 tags: [terminal, flags]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/cli-reference
@@ -78,7 +78,7 @@ Claude should point at `searchNotes` in `notes.js` and propose matching the titl
 
 - The built-in starting mode for a new terminal session is `auto` on Claude Code 2.1.283 or later, when auto mode is available to your account and model. A session with no flag may therefore ask less than you expect. Pass `--permission-mode manual` to review every action.
 - `bypassPermissions`, and the matching `--dangerously-skip-permissions` flag, skip the safety prompts. The docs advise using them only in sandboxes with no internet access.
-- `-w` needs a git repository with at least one commit. Without a commit it fails with a message about resolving the base branch.
+- `-w` works in a git repository. Make a first commit before you use it, because the worktree needs a branch to start from. A fresh `git init` has no commits. The docs do not say what `-w` does in a repository with none, and this was not tested.
 - `--add-dir` grants file access to the folders. The docs say it does not load most `.claude/` configuration from them.
 - Flags last for one session. Anything you want every time belongs in a settings file or a [CLAUDE.md](../workflow/a-claude-md-that-earns-its-keep.md).
 - The CLI reference documents some flags that `claude --help` does not print on this build. This page teaches only the ones that are printed.

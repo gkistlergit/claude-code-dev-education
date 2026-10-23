@@ -5,7 +5,7 @@ area: app
 level: 2
 time: 8
 tags: [pull-requests, ci, auto-fix]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/desktop#monitor-pull-request-status

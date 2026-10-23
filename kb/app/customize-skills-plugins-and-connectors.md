@@ -5,7 +5,7 @@ area: app
 level: 2
 time: 8
 tags: [customize, skills, plugins, connectors]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/desktop#extend-claude-code
@@ -63,7 +63,7 @@ For Trail Notes, a project skill that runs `node checks/run.mjs` and summarizes 
 
 ## Pitfalls
 
-- A skill that exists only in `~/.claude/skills/` on your machine is not found by a cloud scheduled task, because each run starts as a fresh cloud session. Desktop scheduled tasks run locally, so they do load it.
+- A skill that exists only in `~/.claude/skills/` on your machine is not found by a cloud scheduled task, because each run starts as a fresh cloud session. Desktop scheduled tasks run on your machine, and local sessions load that folder.
 - Connectors let Claude read your calendar, send messages and create issues once connected. Add only the ones you need, and read what each one can do.
 - A plugin enabled in a project's settings is not downloaded for your collaborators by that entry alone. Each of them also installs it.
 - Skills pile up. Run the audit before you add the fortieth.

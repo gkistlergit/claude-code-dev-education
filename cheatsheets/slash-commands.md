@@ -2,16 +2,18 @@
 title: Commands Cheatsheet
 kind: cheatsheet
 order: 2
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/commands
+  - https://code.claude.com/docs/en/desktop
   - https://code.claude.com/docs/en/desktop-quickstart
   - https://code.claude.com/docs/en/skills
+  - https://code.claude.com/docs/en/fast-mode
 ---
 
-The commands a developer reaches for most, grouped by job. Type `/` at the start of a message to see the commands available to you, or `/` plus a few letters to filter. In the desktop app you can also click **+** next to the prompt box and choose **Slash commands**. The docs call these commands and dropped the word "slash"; this page's file name keeps the older word. Text after the command name becomes its arguments. In the tables, `[arg]` is optional.
+The commands a developer reaches for most, grouped by job. Type `/` at the start of a message to see the commands available to you, or `/` plus a few letters to filter. In the desktop app you can also click **+** next to the prompt box and choose **Slash commands**. The docs page is titled Commands; this page's file name keeps the older word "slash". Text after the command name becomes its arguments. In the tables, `[arg]` is optional.
 
-Not every command appears for every user, because availability depends on platform, plan and environment. Entries marked "bundled skill" are prompts Claude follows rather than fixed program logic.
+Not every command appears for every user, because availability depends on platform, plan and environment. Entries marked "bundled skill" are prompts Claude follows rather than fixed program logic. In the Code tab, commands that open an interactive panel in the terminal behave differently. The desktop page says a command with no argument form, such as `/permissions`, replies `isn't available in this environment`, and `/config` opens **Settings > Claude Code**. To use those, edit the settings files or run the command in the standalone CLI.
 
 ## Set Up a Project
 
@@ -29,7 +31,7 @@ Not every command appears for every user, because availability depends on platfo
 | `/plan [description]` | Enters plan mode from the prompt, optionally starting on a task | [Plan Mode](../kb/development/plan-mode-think-before-you-edit.md) |
 | `/model [model]` | Switches the model and saves it as your default for new sessions. With no argument it opens a picker. | [Model and Effort Trade-offs](../kb/optimization/model-and-effort-trade-offs.md) |
 | `/effort [level]` | Sets the effort level: `low` up to `xhigh`, `max`, or `auto`. `status` prints the current level. | [Model and Effort Trade-offs](../kb/optimization/model-and-effort-trade-offs.md) |
-| `/fast [on\|off]` | Toggles fast mode, a faster Opus configuration at a higher cost per token. Research preview. | [Fast Mode: When It Pays](../kb/optimization/fast-mode-when-it-pays.md) |
+| `/fast [on\|off]` | Toggles fast mode, a faster Opus configuration at a higher cost per token. On subscription plans it is available through usage credits only. Research preview. | [Fast Mode: When It Pays](../kb/optimization/fast-mode-when-it-pays.md) |
 | `/btw [question]` | Asks a side question without adding it to the conversation | [Split View, Side Chat and Side Sessions](../kb/app/split-view-side-chat-and-side-sessions.md) |
 
 ## Manage Context

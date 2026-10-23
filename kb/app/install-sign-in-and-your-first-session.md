@@ -5,7 +5,7 @@ area: app
 level: 0
 time: 8
 tags: [install, first-session]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/desktop
@@ -47,10 +47,10 @@ Send the prompt from step 7 against the starter. Claude should name `index.html`
 In Manual mode, reading files needs no approval, so you may see no prompts at all. Now send a follow-up:
 
 ```prompt
-Run the checks and tell me which one fails and why.
+Run the checks and tell me which ones fail and why.
 ```
 
-Claude asks before running a command in Manual mode, so expect an approval prompt showing `node checks/run.mjs`. Read the command, then approve it. One check, `search.check.mjs`, should fail, because the starter's `searchNotes` matches case-sensitively. You have found the seeded bug that the first capstone fixes. Do not fix it yet. The [first-session capstone](../../capstones/capstone-0-first-session.md) picks up from here.
+Claude asks before running a command in Manual mode, so expect an approval prompt showing `node checks/run.mjs`. Read the command, then approve it. Two checks in `search.check.mjs` should fail, because the starter's `searchNotes` matches case-sensitively. You have found the seeded bug that [Capstone 1](../../capstones/capstone-1-fix-and-review.md) fixes. Do not fix it yet. The [first-session capstone](../../capstones/capstone-0-first-session.md) picks up from here.
 
 The [explore-a-repo prompt](../../prompts/explore-a-repo.md) is a longer version of step 7 that you can reuse on any project.
 

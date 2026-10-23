@@ -2,7 +2,7 @@
 title: Terminal Tips
 kind: cheatsheet
 order: 3
-verified: 2026-10-22
+verified: 2026-10-23
 sources:
   - https://code.claude.com/docs/en/setup
   - https://code.claude.com/docs/en/cli-reference
@@ -122,9 +122,9 @@ Agent view is a research preview, and its interface and keys may change.
 
 | Command | What it does | Read more |
 | :- | :- | :- |
-| `claude --bg "<prompt>"` | Starts a background session and returns at once, printing its ID | [Split View, Side Chat and Side Sessions](../kb/app/split-view-side-chat-and-side-sessions.md) |
-| `claude agents` | Opens agent view, one screen for your background sessions | [Split View, Side Chat and Side Sessions](../kb/app/split-view-side-chat-and-side-sessions.md) |
-| `claude attach <id>`, `claude logs <id>`, `claude stop <id>` | Opens, reads the recent output of, or stops a background session | [Split View, Side Chat and Side Sessions](../kb/app/split-view-side-chat-and-side-sessions.md) |
+| `claude --bg "<prompt>"` | Starts a background session and returns at once, printing its ID | [Sessions and the Sidebar](../kb/app/sessions-and-the-sidebar.md) |
+| `claude agents` | Opens agent view, one screen for your background sessions | [Sessions and the Sidebar](../kb/app/sessions-and-the-sidebar.md) |
+| `claude attach <id>`, `claude logs <id>`, `claude stop <id>` | Opens, reads the recent output of, or stops a background session | [Sessions and the Sidebar](../kb/app/sessions-and-the-sidebar.md) |
 | `claude --remote-control` | Starts a session you can also control from claude.ai or the Claude app | [Remote Control and Cloud Sessions](../kb/app/remote-control-and-cloud-sessions.md) |
 | `claude --cloud "<task>"` | Creates a cloud session for the task | [Remote Control and Cloud Sessions](../kb/app/remote-control-and-cloud-sessions.md) |
 
@@ -136,7 +136,7 @@ Agent view is a research preview, and its interface and keys may change.
 | `Esc` | Interrupts Claude. It keeps the work done so far. |
 | `Esc` `Esc` | With text in the prompt, clears it and saves the draft so `Up` brings it back. With an empty prompt, opens the rewind menu. |
 | `Ctrl` `C` | Interrupts a running operation. With nothing running, the first press clears the prompt and a second press exits. |
-| `Ctrl` `D` | Exits. The first press shows a confirmation hint. |
+| `Ctrl` `D` | Exits. The first press shows a confirmation hint. With text in the prompt, it deletes the character after the cursor instead. |
 | `Ctrl` `R` | Searches your command history |
 | `Ctrl` `O` | Toggles the transcript viewer |
 | `Ctrl` `B` | Moves running shell commands and agents to the background |

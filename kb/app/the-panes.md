@@ -5,7 +5,7 @@ area: app
 level: 1
 time: 8
 tags: [panes, browser, terminal, diff]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/desktop#arrange-your-workspace
@@ -28,7 +28,7 @@ Use this page when you want to review a change, run a command, watch your app or
 
 ## How It Works
 
-To open a pane, click its icon button in the session's title bar. Hover over a button to see its name. Buttons that do not fit, and panes with no button, are in the ⋮ menu beside them. Drag a pane by its header to move it, or drag an edge to resize it. `Cmd+\` closes the focused pane. You can pop a pane such as the diff or terminal out into its own window and dock it back later, and Claude keeps working in the main window. The docs do not name the control for popping a pane out, so look in the pane's header. This layout needs Claude Desktop v1.2581.0 or later.
+To open a pane, click its icon button in the session's title bar. Hover over a button to see its name. Buttons that do not fit, and panes with no button, are in the ⋮ menu beside them. Drag a pane by its header to move it, or drag an edge to resize it. `Cmd+\` closes the focused pane. You can pop a pane such as the diff or terminal out into its own window and dock it back later, and Claude keeps working in the main window. The docs do not name the control that pops a pane out. This layout needs Claude Desktop v1.2581.0 or later.
 
 | Pane | How to open it | What it does |
 |---|---|---|
@@ -68,8 +68,8 @@ Computer use is a separate feature, labeled research preview. It lets Claude con
 
 Using Trail Notes:
 
-1. Ask Claude to open `index.html`. Click its path in the chat so the page opens in the Browser pane.
-2. Open the Terminal pane and run `node checks/run.mjs`. One check, `search.check.mjs`, fails.
+1. Ask Claude to preview Trail Notes in the Browser pane, using the server setup from [Preview, Ship and Maintain](../app-development/preview-ship-and-maintain.md). Opening `index.html` straight from disk can show an empty page, because the app loads JavaScript modules and the starter README warns about that.
+2. Open the Terminal pane and run `node checks/run.mjs`. Two checks in `search.check.mjs` fail.
 3. Ask Claude to fix `searchNotes` so it matches title and body case-insensitively.
 4. Open the Changes pane. Click a line in the `notes.js` diff, add a comment such as "keep this a pure function", and press `Cmd+Enter`.
 5. Run the checks again in the Terminal pane.

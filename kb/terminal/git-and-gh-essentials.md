@@ -5,7 +5,7 @@ area: terminal
 level: 1
 time: 9
 tags: [terminal, git, github]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/common-workflows
@@ -122,7 +122,7 @@ node checks/run.mjs
 gh pr create --fill
 ```
 
-`git diff` should show only `searchNotes` changing. Run the checks again before the pull request, and expect every check to pass.
+`git diff` should show changes in `notes.js` only. Run the checks again before the pull request, and expect every check to pass.
 
 ## Pitfalls
 
