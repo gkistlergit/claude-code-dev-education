@@ -16,6 +16,8 @@ const REPO_URL = 'https://github.com/gkistlergit/claude-code-dev-education';
 const BASE_404 = process.env.SITE_BASE || '/claude-code-dev-education/';
 const OUT = join(ROOT, 'site');
 const outline = readOutline();
+// Markdown files under exercises/ that are example files, not pages: copied raw and linked raw.
+const RAW_MD = new Set(walk(join(ROOT, 'exercises'), ['.md']).filter((f) => !/(README|tasks)\.md$/.test(f)));
 
 // ---------- helpers ----------
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -76,6 +78,7 @@ function makeMarkdown(env) {
         if (c.type !== 'link_open') continue;
         const href = c.attrGet('href') || '';
         if (/^([a-z][a-z0-9+.-]*:|#|\/)/i.test(href)) continue;
+        if (RAW_MD.has(posix.normalize(posix.join(posix.dirname(env.src), href.split('#')[0])))) continue;
         c.attrSet('href', href.replace(/\.md(#.*)?$/, '.html$1'));
       }
     }
@@ -223,7 +226,7 @@ const extraSources = [
   ...(existsSync(join(ROOT, 'kb/glossary.md')) ? ['kb/glossary.md'] : []),
   ...walk(join(ROOT, 'learn'), ['.md']), ...walk(join(ROOT, 'capstones'), ['.md']), ...walk(join(ROOT, 'assessment'), ['.md']),
   ...walk(join(ROOT, 'cheatsheets'), ['.md']), ...walk(join(ROOT, 'templates'), ['.md']), ...walk(join(ROOT, 'prompts'), ['.md']),
-  ...walk(join(ROOT, 'exercises'), ['README.md']), ...walk(join(ROOT, 'docs'), ['.md'])
+  ...walk(join(ROOT, 'exercises'), ['README.md', 'tasks.md']), ...walk(join(ROOT, 'docs'), ['.md'])
 ];
 for (const src of extraSources.sort()) pages.push(loadPage(src));
 
@@ -298,10 +301,11 @@ const chip = (t) => `<li><span class="chip">${esc(t)}</span></li>`;
 
 function layout({ out, title, desc, bodyHtml, toc = [], current, wide = false, home = false }) {
   const R = rootPrefix(out);
-  const tocHtml = toc.length > 1
+  const noToc = wide || toc.length <= 1;
+  const tocHtml = !noToc
     ? `<nav class="toc" aria-label="On this page"><p class="toc-title">On This Page</p>${toc.map((h) => `<a href="#${h.id}">${esc(h.text)}</a>`).join('')}</nav>`
     : '';
-  const docTitle = home ? SITE_TITLE : `${title} · ${SITE_TITLE}`;
+  const docTitle = home || title === SITE_TITLE ? SITE_TITLE : `${title} · ${SITE_TITLE}`;
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -331,7 +335,7 @@ function layout({ out, title, desc, bodyHtml, toc = [], current, wide = false, h
   </div>
 </header>
 <div class="scrim"></div>
-<div class="shell">
+<div class="shell${noToc ? ' no-toc' : ''}">
   <nav class="sidebar" id="sidebar" aria-label="Site">
 ${sidebar(out, current)}
   </nav>
@@ -382,7 +386,7 @@ function trailFor(p) {
 }
 
 function renderPage(p) {
-  const env = { codeId: 0, used: new Set(), toc: [], path: p.out, modules: p.kind === 'learn' && /level-\d/.test(p.out) };
+  const env = { codeId: 0, used: new Set(), toc: [], path: p.out, src: p.src, modules: p.kind === 'learn' && /level-\d/.test(p.out) };
   const md = makeMarkdown(env);
   let html = md.render(p.body, env);
   const hasLead = p.kind !== 'docs' && p.kind !== 'exercise';
@@ -436,7 +440,8 @@ function renderPage(p) {
 ${crumbs}
 <h1>${esc(p.title)}</h1>
 ${lead}${chips.length ? `<ul class="meta" role="list" aria-label="Page details">${chips.map(chip).join('')}</ul>\n` : ''}${progress}${actions}${html}${related}${pager}</article>`;
-  return layout({ out: p.out, title: p.title, desc: p.summary, bodyHtml: body, toc, current: navKey(p) });
+  const wide = p.out === 'docs/verification-log.html' || p.kind === 'cheatsheet';
+  return layout({ out: p.out, title: p.title, desc: p.summary, bodyHtml: body, toc, current: navKey(p), wide });
 }
 
 // ---------- generated index pages ----------
@@ -569,7 +574,10 @@ write('404.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><m
 
 // Exercise code is copied as-is so learners can download it from the site.
 if (existsSync(join(ROOT, 'exercises'))) {
-  cpSync(join(ROOT, 'exercises'), join(OUT, 'exercises'), { recursive: true, filter: (src) => !src.endsWith('.md') && !src.includes('node_modules') });
+  cpSync(join(ROOT, 'exercises'), join(OUT, 'exercises'), {
+    recursive: true,
+    filter: (src) => { const r = src.slice(ROOT.length + 1); return !src.includes('node_modules') && (!r.endsWith('.md') || RAW_MD.has(r)); }
+  });
 }
 
 console.log(`built ${count} pages and ${searchIndex.length} search entries into site/`);

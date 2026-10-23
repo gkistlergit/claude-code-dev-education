@@ -8,6 +8,7 @@
     "check": "node tools/check.mjs",
     "build": "node tools/build.mjs",
     "contrast": "node tools/contrast.mjs",
+    "check:site": "node tools/check-site.mjs",
     "test": "node tools/check.mjs && node tools/contrast.mjs"
   },
   "dependencies": {

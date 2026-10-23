@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" role="img" aria-labelledby="t d">
+  <title id="t">Claude Code Dev Education</title>
+  <desc id="d">An unofficial, hands-on knowledge base and course for Claude Code, built around the desktop app's Code tab.</desc>
+  <rect width="1200" height="340" rx="36" fill="#1d1d1f"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'SF Pro', system-ui, 'Segoe UI', Roboto, sans-serif">
+    <text x="72" y="140" font-size="68" font-weight="700" fill="#f5f5f7" letter-spacing="-1.5">Claude Code Dev Education</text>
+    <text x="72" y="196" font-size="28" fill="#a1a1a6">A hands-on knowledge base and course, built around the desktop app.</text>
+    <g font-size="22" font-weight="500" fill="#f5f5f7">
+      <rect x="72" y="244" width="190" height="48" rx="24" fill="none" stroke="#636366" stroke-width="2"/>
+      <text x="167" y="276" text-anchor="middle">Development</text>
+      <rect x="278" y="244" width="222" height="48" rx="24" fill="none" stroke="#636366" stroke-width="2"/>
+      <text x="389" y="276" text-anchor="middle">App development</text>
+      <rect x="516" y="244" width="134" height="48" rx="24" fill="none" stroke="#636366" stroke-width="2"/>
+      <text x="583" y="276" text-anchor="middle">Process</text>
+      <rect x="666" y="244" width="178" height="48" rx="24" fill="none" stroke="#636366" stroke-width="2"/>
+      <text x="755" y="276" text-anchor="middle">Optimization</text>
+      <rect x="860" y="244" width="158" height="48" rx="24" fill="none" stroke="#636366" stroke-width="2"/>
+      <text x="939" y="276" text-anchor="middle">Workflow</text>
+    </g>
+    <g fill="none" stroke="#0071e3" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M1040 78l44 36-44 36"/>
+      <path d="M1100 156h56"/>
+    </g>
+  </g>
+</svg>

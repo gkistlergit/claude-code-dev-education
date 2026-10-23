@@ -22,6 +22,8 @@ jobs:
         run: npm test
       - name: Build the site
         run: npm run build
+      - name: Check links and structure in the built site
+        run: npm run check:site
       - name: Run the sample project's checks
         run: |
           set -e
