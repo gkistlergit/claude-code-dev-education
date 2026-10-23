@@ -15,7 +15,7 @@ Period: late September to late October 2026, about four weeks. Counts come from 
 - **Tools.** Bash 81,800 calls, Read 10,000, WebFetch 6,300, Edit 3,900, WebSearch 3,800, Write 2,900, Agent 1,700, Skill 881.
 - **Subagents.** General-purpose 1,194 calls, a custom read-only scout agent 120, Explore 65.
 - **Browser and computer tools.** The built-in browser about 5,700 calls, computer use about 2,100, Claude in Chrome about 1,100.
-- **Session management.** 217 side sessions started from within sessions. 11 sessions came from Remote Control and 1 from the cloud. 5 scheduled tasks exist. 9 sessions are starred.
+- **Session management.** 217 side sessions started from within sessions. 11 sessions came from Remote Control and 1 from the cloud. The desktop app's metadata lists 5 scheduled tasks. 9 sessions are starred.
 - **Slash commands and skills.** A handoff skill 86 times, a planning skill 32, a prompt-sharpening skill 27, `/clear` 24, `/model` 17, `/compact` once.
 - **Context management.** Context is managed with handoffs and `/clear`. There were 7 compaction events in 5 sessions.
 - **Memory.** 269 memory files across 15 projects, mostly incident lessons, tooling traps, design notes and workflow preferences.
@@ -33,7 +33,7 @@ Period: late September to late October 2026, about four weeks. Counts come from 
 - 4 hooks: a guard that blocks destructive git commands, context-usage warnings at 70% and 90%, a reset of those warnings after compaction, and a drift warning at session start.
 - 8 short global rules files, each covering one rule.
 - The configuration lives in a repository with a manifest of pinned third-party packages, drift detection and backups.
-- 8 scheduled tasks for recurring chores. No custom keybindings, no allow or deny lists, no status line.
+- 8 scheduled-task definitions in the configuration folder for recurring chores (the app metadata above counts 5 scheduled tasks, so the two numbers come from different places). No custom keybindings, no allow or deny lists, no status line.
 - Project instruction files are short, 13 to 20 lines. Each project carries 38 to 43 skills copied from a shared set.
 
 ## The author's projects
