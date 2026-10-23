@@ -2,10 +2,10 @@
 title: Debug from an Error
 kind: prompt
 order: 4
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
-Use this when something fails and you have the exact error or the failing check output. It makes Claude reproduce the problem and rank causes before it changes any code, which prevents a fix aimed at the wrong thing. [Debugging with Claude](../kb/development/debugging-with-claude.md) walks through the same method.
+Use this when something fails and you have the exact error or the failing check output. It asks Claude to reproduce the problem and rank causes before it changes any code, which makes a fix aimed at the wrong thing less likely. [Debugging with Claude](../kb/development/debugging-with-claude.md) walks through the same method.
 
 ## Prompt
 

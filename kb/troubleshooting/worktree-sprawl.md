@@ -5,7 +5,7 @@ area: troubleshooting
 level: 3
 time: 6
 tags: [troubleshooting, worktrees]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/worktrees
@@ -26,7 +26,7 @@ Use this page when the `.claude/worktrees/` folder keeps growing, when you canno
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| Many folders under `.claude/worktrees/` | Each worktree session creates a folder, and nothing removes it when its pull request merges unless you act | List them with `git worktree list` and remove the finished ones |
+| Many folders under `.claude/worktrees/` | Each worktree session creates a folder, and a worktree that still holds changes stays on disk | List them with `git worktree list` and remove the finished ones |
 | Many leftover branches | Each worktree comes with its own branch | After you remove the worktree, delete its branch if it is fully merged |
 | Archived sessions leave folders behind | A worktree that holds changes stays on disk after you archive the session | Commit what you want to keep before archiving, then remove the folder by hand. The docs say the app removes a local session's worktree about 30 days after you archive or last open it, whichever is later |
 | `git worktree list` marks an entry `prunable` | Someone deleted the folder without telling git | Preview with `git worktree prune -n`, then run `git worktree prune` |

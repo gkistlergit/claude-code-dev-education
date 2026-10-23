@@ -5,7 +5,7 @@ area: decision-guides
 level: 1
 time: 5
 tags: [decision, plan-mode]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode

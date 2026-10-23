@@ -2,7 +2,7 @@
 title: Review a Diff
 kind: prompt
 order: 5
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
 Use this after a change is written and before it merges, whether you or Claude wrote it. It works best in a fresh session or a subagent, so the reviewer has not seen the reasoning that produced the change. [Code Review, Yours and Claude's](../kb/development/code-review-yours-and-claudes.md) covers the options.

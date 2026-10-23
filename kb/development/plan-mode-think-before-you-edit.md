@@ -5,7 +5,7 @@ area: development
 level: 1
 time: 6
 tags: [plan-mode, permissions]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/permission-modes#analyze-before-you-edit-with-plan-mode
@@ -15,6 +15,7 @@ sources:
   - https://code.claude.com/docs/en/model-config
   - https://code.claude.com/docs/en/interactive-mode
   - https://code.claude.com/docs/en/context-window
+  - https://code.claude.com/docs/en/tools-reference
 related: [A05, DG02, D03, R02, DG01]
 ---
 

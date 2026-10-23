@@ -2,10 +2,10 @@
 title: Refactor with Guardrails
 kind: prompt
 order: 7
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
-Use this when you want to restructure working code without changing what it does. It makes Claude write down the behavior to preserve, prove the checks pass first, and move in steps you can undo. [Refactoring Safely](../kb/development/refactoring-safely.md) covers the method, and a branch or worktree keeps the experiment separate; see [Worktrees and Branches in the App](../kb/app/worktrees-and-branches-in-the-app.md).
+Use this when you want to restructure working code without changing what it does. It asks Claude to write down the behavior to preserve, prove the checks pass first, and move in steps you can undo. [Refactoring Safely](../kb/development/refactoring-safely.md) covers the method, and a branch or worktree keeps the experiment separate; see [Worktrees and Branches in the App](../kb/app/worktrees-and-branches-in-the-app.md).
 
 ## Prompt
 

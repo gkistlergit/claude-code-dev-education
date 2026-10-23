@@ -2,7 +2,7 @@
 title: Plan a Change
 kind: prompt
 order: 2
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
 Use this before a change that touches several files or is hard to undo. It asks Claude for a plan you can approve or correct before anything is edited. You can send it in any permission mode, and choosing Plan in the permission mode control adds a second guard. [Plan Mode: Think Before You Edit](../kb/development/plan-mode-think-before-you-edit.md) covers both.

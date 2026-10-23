@@ -2,7 +2,7 @@
 title: Profile a Slow Path
 kind: prompt
 order: 11
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
 Use this when something feels slow and you want to find out why before you touch it. It asks Claude to build a repeatable benchmark, report only the numbers a tool printed, and change one thing at a time. [Profiling and Benchmarking with Claude](../kb/optimization/profiling-and-benchmarking-with-claude.md) explains the method.

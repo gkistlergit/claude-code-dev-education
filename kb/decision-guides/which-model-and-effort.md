@@ -5,7 +5,7 @@ area: decision-guides
 level: 2
 time: 5
 tags: [decision, models]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/model-config
@@ -43,7 +43,7 @@ Fast mode is a research preview and a separate question. It runs Claude Opus in 
 > **Observed in the app**
 > Fast mode also appears on the desktop Code tab. The fast mode page covers the CLI, the VS Code extension and cloud sessions but not the desktop app, so how it behaves there may change.
 
-In the author's setup, most turns ran on Opus at `xhigh` or `high`, and fast mode was never used. The audit counts turns and does not show whether lower levels would have done as well. [Model and Effort Trade-offs](../optimization/model-and-effort-trade-offs.md) covers testing that yourself.
+In the author's setup, most turns ran on Opus, most ran at `xhigh` or `high`, and fast mode was never used. The audit counts turns and does not show whether lower levels would have done as well. [Model and Effort Trade-offs](../optimization/model-and-effort-trade-offs.md) covers testing that yourself.
 
 ## Pitfalls
 

@@ -2,7 +2,7 @@
 title: Grill a Spec
 kind: prompt
 order: 8
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
 Use this before you build anything with more than a couple of open decisions in it. Claude asks questions one at a time, with a recommended answer for each, until the decisions are explicit. Then it writes the spec. [Spec First: Grilling and a Glossary](../kb/app-development/spec-first-grilling-and-a-glossary.md) explains why this saves rework.

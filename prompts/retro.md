@@ -2,7 +2,7 @@
 title: Retro
 kind: prompt
 order: 10
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
 Use this after an incident, a long session or a week of work, when you want to learn something specific and change how you work. It asks Claude to build the timeline from evidence and to propose changes you can measure. [Handoff Ledgers and Retros](../kb/process/handoff-ledgers-and-retros.md) puts it in context.

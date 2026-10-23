@@ -2,10 +2,10 @@
 title: Tests First
 kind: prompt
 order: 3
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
-Use this when you add behavior or fix a bug and want the check to exist, fail for the right reason, and then pass. It stops Claude from writing a check that was shaped to fit code it had already written. [Test-Driven Development with Claude](../kb/development/test-driven-development-with-claude.md) explains the loop.
+Use this when you add behavior or fix a bug and want the check to exist, fail for the right reason, and then pass. It asks for the check before the code, so the check is not shaped to fit code Claude has already written. [Test-Driven Development with Claude](../kb/development/test-driven-development-with-claude.md) explains the loop.
 
 ## Prompt
 
@@ -24,7 +24,7 @@ Do not edit existing checks to make them pass. If you think an existing check is
 - The first run shows one new check failing, and the message names the missing behavior. A typo, a syntax error or an import error is the wrong reason.
 - Claude stops after the failing run and waits for you.
 - The change that follows is small and sits in the source file you named.
-- The final run shows every check, old and new, with the exit status.
+- The final run shows every check, old and new, ending in the `passed, failed` summary line.
 - The Changes pane shows no edits to existing check files.
 
 In Trail Notes, a check for a function that does not exist yet fails with `could not load`, which proves little. Ask for an empty stub that returns the wrong answer first, so the check fails on behavior.

@@ -2,7 +2,7 @@
 title: Write a PR Body
 kind: prompt
 order: 6
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
 Use this when a branch is ready for review and you want a pull request description a reviewer can trust. It asks Claude to read the diff, report only what it actually ran, and say what was not checked. [Pull Requests That Review Fast](../kb/process/pull-requests-that-review-fast.md) explains why that last part matters.

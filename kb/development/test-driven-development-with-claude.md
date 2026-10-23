@@ -5,7 +5,7 @@ area: development
 level: 2
 time: 9
 tags: [tdd, testing]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/common-workflows
@@ -65,6 +65,8 @@ The answer should say that a query in a different case than the note's text find
 ```prompt
 Does search.check.mjs cover both a title match and a body match where the query's case differs from the note? If it covers only one, add a failing test for the other. Edit only search.check.mjs, run the checks, and show me the new test failing.
 ```
+
+In the starter, `search.check.mjs` already has one check for a title in a different case and one for a body in any case, so a careful Claude should say both are covered and add nothing. A new test appearing means it found a gap, so read it.
 
 Now go green:
 

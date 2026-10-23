@@ -5,7 +5,7 @@ area: troubleshooting
 level: 2
 time: 6
 tags: [troubleshooting, instructions]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/memory
@@ -36,7 +36,7 @@ Use this page when Claude does something your CLAUDE.md or rules file says not t
 | Commit or pull request rules are ignored | They compete with built-in guidance | The settings `includeGitInstructions` and `attribution` control the built-in text |
 | A step must happen every time | Claude treats your instructions as context | Use a hook. It runs as a shell command at a fixed point whatever Claude decides |
 
-Two tools help. `/doctor` proposes trims for a checked-in CLAUDE.md, and `/doctor prompt-audit` (Claude Code v2.1.283 or later) reports outdated or conflicting instructions and proposes edits without changing anything until you say so. To open the files, the memory page describes `/memory` for the terminal. The Desktop page warns that dialog-style commands behave differently in the Code tab, so if `/memory` does not help in your build, open the file from the Files pane.
+Two tools help. `/doctor` proposes trims for a checked-in CLAUDE.md, and `/doctor prompt-audit` (Claude Code v2.1.283 or later) reports outdated or conflicting instructions and proposes edits without changing anything until you say so. To open the files, the memory page describes `/memory` for the terminal. The Desktop page warns that dialog-style commands behave differently in the Code tab, so if `/memory` does not help in your build, open the file in the file pane.
 
 If Claude keeps skipping one line, the best-practices page suggests adding emphasis such as "IMPORTANT" to that line alone. Emphasize many lines and none stands out.
 

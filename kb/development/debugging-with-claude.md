@@ -5,7 +5,7 @@ area: development
 level: 2
 time: 8
 tags: [debugging]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/common-workflows
@@ -17,7 +17,7 @@ sources:
 related: [D07, P06, TS04, D03]
 ---
 
-Debug in a fixed order: reproduce the failure, give Claude the exact error and how to trigger it, ask for ranked hypotheses before any edit, make the smallest fix, and leave a regression test behind. The bundled `/debug` skill is a different tool, and the first section below explains what it does.
+Debug in a fixed order: reproduce the failure, give Claude the exact error and how to trigger it, ask for ranked hypotheses before any edit, make the smallest fix, and leave a regression test behind. The bundled `/debug` skill is a different tool, and the Steps section explains what it does.
 
 ## When to Use It
 
@@ -34,7 +34,7 @@ Use this routine for an error message, a failing check, or behavior that differs
 7. **Add** a regression test, which is a check that fails without the fix and passes with it. Prove that by reverting the fix for one run.
 8. **Review** the diff as described in [Reading and Reviewing Diffs](./reading-and-reviewing-diffs.md), then commit.
 
-The bundled `/debug` skill turns on debug logging for the current Claude Code session and reads the session debug log. You can add a description to focus the analysis. It targets problems with Claude Code itself. The checkpointing page, for example, points to it when a rewind skips files. It does not hunt for bugs in your own code. Logging is off by default, so `/debug` run mid-session captures from that point on. To see why Claude took a particular action, switch the transcript to Verbose with **Ctrl+O**.
+The bundled `/debug` skill turns on debug logging for the current Claude Code session and reads the session debug log. You can add a description to focus the analysis. It targets problems with Claude Code itself. The checkpointing page, for example, points to it when a rewind skips files. It does not hunt for bugs in your own code. Logging is off by default, so `/debug` run mid-session captures from that point on. To see why Claude took a particular action, switch the transcript view to Verbose: open the session menu from the caret beside the session title and choose **Transcript view**, or press **Ctrl+O** to cycle through the modes.
 
 > **Terminal tip**
 > `claude --debug` starts a session with debug logging already on, so `/debug` does not miss the early events.
@@ -51,7 +51,7 @@ Use the seeded bug in Trail Notes (see the [starter](../../exercises/trail-notes
 node checks/run.mjs
 ```
 
-`node` runs a JavaScript file, and `checks/run.mjs` is the runner that executes every check. The output should point at `checks/search.check.mjs` as the failing check. That is your reproduction. Now ask for hypotheses:
+`node` runs a JavaScript file, and `checks/run.mjs` is the runner that executes every check. Two lines start with `FAIL  search >`, which is the check file `checks/search.check.mjs`. That is your reproduction. Now ask for hypotheses:
 
 ```prompt
 node checks/run.mjs fails in checks/search.check.mjs. I expect searchNotes to match a note's title and body without regard to case. Read the check and notes.js, then give me hypotheses ranked by likelihood, each with the evidence that would confirm it. Don't edit anything yet.

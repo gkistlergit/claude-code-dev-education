@@ -2,10 +2,10 @@
 title: Update Docs
 kind: prompt
 order: 12
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
-Use this after a change, so the README, comments and examples still say what the code does. It makes Claude find every place that mentions the changed behavior, edit only what is now wrong, and run the commands the docs show.
+Use this after a change, so the README, comments and examples still say what the code does. It asks Claude to find every place that mentions the changed behavior, edit only what is now wrong, and run the commands the docs show.
 
 ## Prompt
 

@@ -5,7 +5,7 @@ area: development
 level: 3
 time: 9
 tags: [security]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/permissions
@@ -53,7 +53,7 @@ Do a threat-model pass on Trail Notes. Its data is text the user types, so ask w
 Do a quick threat-model pass on Trail Notes. List every place text a user types (a note's title, a note's body or a search query) reaches the page or localStorage. For each place, say whether the text is inserted as plain text or as HTML, and quote the line. Don't edit anything.
 ```
 
-Read each quoted line yourself. Then test it. Open the app in the **Browser** pane, add a note titled `<b>bold</b>`, and look at the list. If the title appears literally with its angle brackets, that path inserts text. If it appears in bold, that path inserts HTML, and any markup a user types would run as part of the page. Ask for a failing check first, then the smallest fix.
+Read each quoted line yourself. Then test it. Serve the app as the starter README describes and open it in the **Browser** pane, add a note titled `<b>bold</b>`, and look at the list. In the starter the title appears literally with its angle brackets, because `app.js` sets `textContent`, so that path inserts text. If a path you add later shows it in bold, that path inserts HTML, and any markup a user types would run as part of the page. Ask for a failing check first, then the smallest fix.
 
 Notes also sit in `localStorage`, which MDN describes as scoped to the page's origin with no expiration time. Treat anything typed into a note as stored in the browser indefinitely, so no secrets in notes.
 

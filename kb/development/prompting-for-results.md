@@ -5,7 +5,7 @@ area: development
 level: 1
 time: 8
 tags: [prompting]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/best-practices
@@ -23,7 +23,7 @@ Use this routine for any task that will change files, and again whenever Claude'
 ## Steps
 
 1. **Type** the goal as an outcome and say where it applies. "Searching in Trail Notes misses notes whose case differs from the query" gives Claude more to work with than "fix search".
-2. **Add** constraints: files that must not change, libraries to avoid, an existing file whose pattern to copy. The best practices page lists pointing to existing patterns as one of the most useful moves.
+2. **Add** constraints: files that must not change, libraries to avoid, an existing file whose pattern to copy. The best practices page lists pointing to existing patterns as one way to scope a prompt.
 3. **Say** how you will know it worked. Name a check Claude can run, such as `node checks/run.mjs`, and ask it to show the output. A check Claude can read closes the loop without you.
 4. **Attach** context instead of describing it. Type `@` followed by a filename to add that file. Click the **+** button next to the prompt box to attach images, PDFs and other files, or drag them into the prompt. Right-click a file path in the chat, the diff viewer or the file pane and choose **Attach as context** to add it to your next prompt.
 5. **Ask** for a plan first when the change touches several files or the approach is open. The best practices page suggests skipping the plan if you could describe the diff in one sentence. [Plan Mode: Think Before You Edit](./plan-mode-think-before-you-edit.md) covers the tool for this.

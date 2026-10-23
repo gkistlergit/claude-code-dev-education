@@ -2,10 +2,10 @@
 title: Handoff Note
 kind: prompt
 order: 9
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
-Use this when a session has grown long, or when you will pick the work up in a new session, on another machine or on another day. It asks for a note that carries intent, state, decisions and next steps, so you can start clean with `/clear` or a new session and lose nothing that matters. [Clear, Compact and Hand Off](../kb/optimization/clear-compact-and-hand-off.md) compares the options, and [Handoffs Between Sessions and Devices](../kb/workflow/handoffs-between-sessions-and-devices.md) covers the rest.
+Use this when a session has grown long, or when you will pick the work up in a new session, on another machine or on another day. It asks for a note that carries intent, state, decisions and next steps, so you can start clean with `/clear` or a new session and check the note for anything missing. [Clear, Compact and Hand Off](../kb/optimization/clear-compact-and-hand-off.md) compares the options, and [Handoffs Between Sessions and Devices](../kb/workflow/handoffs-between-sessions-and-devices.md) covers the rest.
 
 ## Prompt
 

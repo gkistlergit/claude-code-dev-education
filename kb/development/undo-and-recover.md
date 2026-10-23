@@ -5,7 +5,7 @@ area: development
 level: 1
 time: 7
 tags: [rewind, git, checkpoints]
-verified: 2026-10-22
+verified: 2026-10-23
 status: partial
 sources:
   - https://code.claude.com/docs/en/checkpointing
@@ -51,7 +51,7 @@ In a project that is a git repository, turn on **Worktree** in the project folde
 One caution: archiving a session can discard uncommitted changes in its worktree. If Desktop asks, **Archive anyway** discards them. Commit what you want to keep first.
 
 > **Terminal tip**
-> `claude --worktree try-tags` starts a session in a new git worktree: a separate checkout on its own branch, created from an existing commit. The folder needs at least one commit first.
+> `claude --worktree try-tags` starts a session in a new git worktree: a separate checkout on its own branch, here `worktree-try-tags`, under `.claude/worktrees/try-tags/`. By default it branches from the repository's default branch on the remote, or from your current commit when there is no remote.
 >
 > ```terminal
 > claude --worktree try-tags

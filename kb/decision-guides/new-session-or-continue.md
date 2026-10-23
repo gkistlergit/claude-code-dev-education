@@ -5,7 +5,7 @@ area: decision-guides
 level: 1
 time: 5
 tags: [decision, sessions]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/context-window
@@ -32,7 +32,7 @@ Decide each time you finish a unit of work, and whenever Claude starts forgettin
 | The next task is unrelated | `/clear`, or **+ New** for a new session | Old conversation crowds out the files you need next |
 | You corrected Claude twice on the same point | `/clear` and a better first prompt | Failed attempts stay in the context |
 | The work spans days, or someone else continues it | A handoff note, then a new session | A note you wrote is easier to trust than an automatic summary |
-| You want to try a different direction | `/branch`, or rewind | The original stays intact |
+| You want to try a different direction | `/branch` | The original conversation stays intact. `/rewind` instead goes back to an earlier point in the same conversation |
 
 `/clear` starts a new conversation with empty context, and `/resume` brings the old one back. Claude also compacts automatically as the window fills, so a full context never ends the session. Compacting yourself, with instructions, gives you control over what survives.
 

@@ -5,7 +5,7 @@ area: development
 level: 2
 time: 8
 tags: [refactoring]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/common-workflows
@@ -33,7 +33,7 @@ Refactor when code works but is hard to change: a file doing two jobs, duplicate
 7. **Run** `/simplify` on the finished change. The commands reference says four review agents run in parallel, covering reuse of existing helpers, simplification, efficiency and whether the change sits at the right level of abstraction. It applies fixes and does not look for bugs, so use `/code-review` for those. Review its diff like any other, then rerun the checks.
 
 > **Terminal tip**
-> `claude --worktree refactor-storage` starts a session in a new git worktree, a separate checkout on its own branch. The repository needs at least one commit first.
+> `claude --worktree refactor-storage` starts a session in a new git worktree, a separate checkout on its own branch, here `worktree-refactor-storage`. By default the branch starts from the repository's default branch on the remote, or from your current commit when there is no remote.
 >
 > ```terminal
 > claude --worktree refactor-storage
@@ -51,7 +51,7 @@ First, ask what the existing checks cover:
 I'm about to move the localStorage code out of app.js. These behaviors must not change: notes saved before the change still load, and added or removed notes still persist across a page reload. Which of these do the checks in checks/ cover, and which do they miss? Don't edit anything.
 ```
 
-For the gaps, plan a manual check. In a local session, click the path of `index.html` in the chat to open it in the **Browser** pane. Add a note, reload and confirm it is still there. Then do the first step:
+For the gaps, plan a manual check. Ask Claude to preview the app so it opens in the **Browser** pane ([Preview, Ship and Maintain](../app-development/preview-ship-and-maintain.md) shows the setup; Trail Notes needs a local web server). Add a note, reload and confirm it is still there. Then do the first step:
 
 ```prompt
 Move the code in app.js that reads notes from localStorage into a new file, storage.js, and have app.js use it. Don't touch notes.js or anything in checks/. Do only the reading half, run node checks/run.mjs, and stop so I can review.

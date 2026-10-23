@@ -5,7 +5,7 @@ area: decision-guides
 level: 1
 time: 5
 tags: [decision, permissions]
-verified: 2026-10-22
+verified: 2026-10-23
 status: verified
 sources:
   - https://code.claude.com/docs/en/permission-modes
@@ -26,7 +26,7 @@ Choose a mode at the start of a session and again whenever the task changes risk
 | Sign-in, payments, deleting data, code you do not know | Manual | Reads only | You read every action and every diff |
 | Iterating on code you will review afterward | Accept edits | File edits and common filesystem commands | Committed work and a diff review |
 | You do not know the approach yet | Plan | Reads; edits stay blocked until you approve a plan | You read the plan, see [Plan Mode or Not](./plan-mode-or-not.md) |
-| A long task with a clear goal and checks Claude can run | Auto | Everything, with background safety checks | Tests, a guard hook and committed work |
+| A long task with a clear goal and checks Claude can run | Auto | Routine actions, with a background classifier checking shell commands and network requests first | Tests, a guard hook and committed work |
 | A throwaway container or VM | Bypass permissions | Everything except actions no mode auto-approves | Isolation, because the docs say to use it only in sandboxed containers or VMs |
 
 Availability differs by mode:

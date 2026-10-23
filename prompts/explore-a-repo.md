@@ -2,7 +2,7 @@
 title: Explore a Repo
 kind: prompt
 order: 1
-verified: 2026-10-22
+verified: 2026-10-23
 ---
 
 Use this when you open a folder you did not write, or return to one after a long break, and want a map before you change anything. It asks for a read-only answer short enough to read in a minute.
