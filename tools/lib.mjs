@@ -38,7 +38,7 @@ export const articlePath = (a) => `kb/${a.area}/${a.slug}.md`;
 
 /** All files under a directory (relative paths), skipping heavy or generated folders. */
 export function walk(dir = ROOT, exts = null, out = []) {
-  const skip = new Set(['node_modules', '.git', 'site', '.claude']);
+  const skip = new Set(['node_modules', '.git', 'site', '.claude', '.impeccable']);
   for (const name of readdirSync(dir)) {
     if (skip.has(name)) continue;
     const full = join(dir, name);
